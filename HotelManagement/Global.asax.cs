@@ -19,7 +19,6 @@ namespace HotelManagement
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-
             HttpConfiguration config = GlobalConfiguration.Configuration;
 
             config.Formatters.JsonFormatter

@@ -19,6 +19,6 @@ namespace HotelManagement.Models
         public Nullable<System.DateTime> CreatedDateTime { get; set; }
     
         public virtual HotelChain HotelChain { get; set; }
-        public virtual Hotel Hotel { get; set; }
+        public virtual Hotels Hotels { get; set; }
     }
 }

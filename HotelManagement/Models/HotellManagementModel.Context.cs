@@ -25,17 +25,17 @@ namespace HotelManagement.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Address> Addresses { get; set; }
-        public virtual DbSet<Booking> Bookings { get; set; }
-        public virtual DbSet<Department> Departments { get; set; }
-        public virtual DbSet<Employee> Employees { get; set; }
-        public virtual DbSet<Guest> Guests { get; set; }
-        public virtual DbSet<HotelChain> HotelChains { get; set; }
-        public virtual DbSet<Hotel> Hotels { get; set; }
-        public virtual DbSet<RoomBooked> RoomBookeds { get; set; }
-        public virtual DbSet<Room> Rooms { get; set; }
-        public virtual DbSet<RoomType> RoomTypes { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-        public virtual DbSet<HotelChainHasHotel> HotelChainHasHotels { get; set; }
+        public virtual DbSet<Addresses> Addresses { get; set; }
+        public virtual DbSet<Bookings> Bookings { get; set; }
+        public virtual DbSet<Departments> Departments { get; set; }
+        public virtual DbSet<Employees> Employees { get; set; }
+        public virtual DbSet<Guests> Guests { get; set; }
+        public virtual DbSet<HotelChain> HotelChain { get; set; }
+        public virtual DbSet<Hotels> Hotels { get; set; }
+        public virtual DbSet<RoomBooked> RoomBooked { get; set; }
+        public virtual DbSet<Rooms> Rooms { get; set; }
+        public virtual DbSet<RoomType> RoomType { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<HotelChainHasHotel> HotelChainHasHotel { get; set; }
     }
 }

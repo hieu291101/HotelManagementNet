@@ -12,30 +12,31 @@ namespace HotelManagement.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Employee
+    public partial class Bookings
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Employee()
+        public Bookings()
         {
-            this.Bookings = new HashSet<Booking>();
+            this.RoomBooked = new HashSet<RoomBooked>();
         }
     
-        public int EmployeeID { get; set; }
-        public string EmployeeFirstName { get; set; }
-        public string EmployeeLastName { get; set; }
-        public string EmployeeDesignation { get; set; }
-        public Nullable<int> EmployeeAddressID { get; set; }
-        public string EmployeeContactNumber { get; set; }
-        public string EmployeeEmail { get; set; }
-        public Nullable<int> DepartmentID { get; set; }
-        public Nullable<int> AddressID { get; set; }
+        public int BookingID { get; set; }
+        public Nullable<System.DateTime> BookingDate { get; set; }
+        public string DurationStay { get; set; }
+        public Nullable<System.DateTime> CheckInDate { get; set; }
+        public Nullable<System.DateTime> CheckOutDate { get; set; }
+        public string BookingPaymentType { get; set; }
+        public Nullable<int> TotalRoomsBooked { get; set; }
         public Nullable<int> HotelID { get; set; }
+        public Nullable<int> GuestID { get; set; }
+        public Nullable<int> EmployeeID { get; set; }
+        public Nullable<decimal> TotalAmount { get; set; }
         public Nullable<System.DateTime> CreatedDateTime { get; set; }
     
-        public virtual Address Address { get; set; }
+        public virtual Employees Employees { get; set; }
+        public virtual Guests Guests { get; set; }
+        public virtual Hotels Hotels { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Booking> Bookings { get; set; }
-        public virtual Department Department { get; set; }
-        public virtual Hotel Hotel { get; set; }
+        public virtual ICollection<RoomBooked> RoomBooked { get; set; }
     }
 }

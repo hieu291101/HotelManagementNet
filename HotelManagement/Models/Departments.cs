@@ -12,12 +12,12 @@ namespace HotelManagement.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Department
+    public partial class Departments
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Department()
+        public Departments()
         {
-            this.Employees = new HashSet<Employee>();
+            this.Employees = new HashSet<Employees>();
         }
     
         public int DepartmentID { get; set; }
@@ -26,6 +26,6 @@ namespace HotelManagement.Models
         public Nullable<System.DateTime> CreatedDateTime { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Employee> Employees { get; set; }
+        public virtual ICollection<Employees> Employees { get; set; }
     }
 }

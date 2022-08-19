@@ -12,12 +12,12 @@ namespace HotelManagement.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Room
+    public partial class Rooms
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Room()
+        public Rooms()
         {
-            this.RoomBookeds = new HashSet<RoomBooked>();
+            this.RoomBooked = new HashSet<RoomBooked>();
         }
     
         public int RoomID { get; set; }
@@ -26,9 +26,9 @@ namespace HotelManagement.Models
         public int HotelID { get; set; }
         public Nullable<System.DateTime> CreatedDateTime { get; set; }
     
-        public virtual Hotel Hotel { get; set; }
+        public virtual Hotels Hotels { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RoomBooked> RoomBookeds { get; set; }
+        public virtual ICollection<RoomBooked> RoomBooked { get; set; }
         public virtual RoomType RoomType { get; set; }
     }
 }

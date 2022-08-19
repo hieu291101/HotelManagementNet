@@ -11,17 +11,16 @@ namespace HotelManagement.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.Runtime.Serialization;
-
-    public partial class Hotel
+    
+    public partial class Hotels
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Hotel()
+        public Hotels()
         {
-            this.Bookings = new HashSet<Booking>();
-            this.Employees = new HashSet<Employee>();
-            this.HotelChainHasHotels = new HashSet<HotelChainHasHotel>();
-            this.Rooms = new HashSet<Room>();
+            this.Bookings = new HashSet<Bookings>();
+            this.Employees = new HashSet<Employees>();
+            this.HotelChainHasHotel = new HashSet<HotelChainHasHotel>();
+            this.Rooms = new HashSet<Rooms>();
         }
     
         public int HotelID { get; set; }
@@ -39,18 +38,14 @@ namespace HotelManagement.Models
         public Nullable<System.TimeSpan> CheckOutTime { get; set; }
         public Nullable<System.DateTime> CreatedDateTime { get; set; }
     
-        public virtual Address Address { get; set; }
+        public virtual Addresses Addresses { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [IgnoreDataMember]
-        public virtual ICollection<Booking> Bookings { get; set; }
+        public virtual ICollection<Bookings> Bookings { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [IgnoreDataMember]
-        public virtual ICollection<Employee> Employees { get; set; }
+        public virtual ICollection<Employees> Employees { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [IgnoreDataMember]
-        public virtual ICollection<HotelChainHasHotel> HotelChainHasHotels { get; set; }
+        public virtual ICollection<HotelChainHasHotel> HotelChainHasHotel { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [IgnoreDataMember]
-        public virtual ICollection<Room> Rooms { get; set; }
+        public virtual ICollection<Rooms> Rooms { get; set; }
     }
 }

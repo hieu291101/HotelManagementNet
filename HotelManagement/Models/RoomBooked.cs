@@ -19,7 +19,7 @@ namespace HotelManagement.Models
         public Nullable<int> RoomID { get; set; }
         public Nullable<System.DateTime> CreatedDateTime { get; set; }
     
-        public virtual Booking Booking { get; set; }
-        public virtual Room Room { get; set; }
+        public virtual Bookings Bookings { get; set; }
+        public virtual Rooms Rooms { get; set; }
     }
 }

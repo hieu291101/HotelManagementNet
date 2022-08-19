@@ -22,7 +22,7 @@ namespace HotelManagement.Models
         public Nullable<int> HotelChainHeadOfficeAddressID { get; set; }
         public Nullable<System.DateTime> CreatedDateTime { get; set; }
     
-        public virtual Address Address { get; set; }
+        public virtual Addresses Addresses { get; set; }
         public virtual HotelChainHasHotel HotelChainHasHotel { get; set; }
     }
 }

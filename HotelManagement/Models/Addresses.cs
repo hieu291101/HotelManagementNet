@@ -12,15 +12,15 @@ namespace HotelManagement.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Address
+    public partial class Addresses
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Address()
+        public Addresses()
         {
-            this.Employees = new HashSet<Employee>();
-            this.Guests = new HashSet<Guest>();
-            this.HotelChains = new HashSet<HotelChain>();
-            this.Hotels = new HashSet<Hotel>();
+            this.Employees = new HashSet<Employees>();
+            this.Guests = new HashSet<Guests>();
+            this.HotelChain = new HashSet<HotelChain>();
+            this.Hotels = new HashSet<Hotels>();
         }
     
         public int AddressID { get; set; }
@@ -33,12 +33,12 @@ namespace HotelManagement.Models
         public Nullable<System.DateTime> CreatedDateTime { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Employee> Employees { get; set; }
+        public virtual ICollection<Employees> Employees { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Guest> Guests { get; set; }
+        public virtual ICollection<Guests> Guests { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HotelChain> HotelChains { get; set; }
+        public virtual ICollection<HotelChain> HotelChain { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Hotel> Hotels { get; set; }
+        public virtual ICollection<Hotels> Hotels { get; set; }
     }
 }

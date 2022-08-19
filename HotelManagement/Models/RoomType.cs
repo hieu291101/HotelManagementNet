@@ -17,7 +17,7 @@ namespace HotelManagement.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public RoomType()
         {
-            this.Rooms = new HashSet<Room>();
+            this.Rooms = new HashSet<Rooms>();
         }
     
         public int RoomTypeID { get; set; }
@@ -27,6 +27,6 @@ namespace HotelManagement.Models
         public Nullable<System.DateTime> CreatedDateTime { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Room> Rooms { get; set; }
+        public virtual ICollection<Rooms> Rooms { get; set; }
     }
 }
