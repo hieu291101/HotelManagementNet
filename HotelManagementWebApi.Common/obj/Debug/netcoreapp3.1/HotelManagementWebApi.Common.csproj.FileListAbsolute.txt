@@ -11,3 +11,16 @@ D:\CSharp\HotelManagementWebApi\HotelManagementWebApi.Common\obj\Debug\netcoreap
 D:\CSharp\HotelManagementWebApi\HotelManagementWebApi.Common\obj\Debug\netcoreapp3.1\HotelManagementWebApi.Common.pdb
 D:\CSharp\HotelManagementWebApi\HotelManagementWebApi.Common\obj\Debug\netcoreapp3.1\HotelManagementWebApi.Common.genruntimeconfig.cache
 D:\CSharp\HotelManagementWebApi\HotelManagementWebApi.Common\obj\Debug\netcoreapp3.1\HotelManagementWebApi.Common.csproj.AssemblyReference.cache
+D:\CSharp\HotelManagementNet\HotelManagementWebApi.Common\bin\Debug\netcoreapp3.1\HotelManagementWebApi.Common.deps.json
+D:\CSharp\HotelManagementNet\HotelManagementWebApi.Common\bin\Debug\netcoreapp3.1\HotelManagementWebApi.Common.runtimeconfig.json
+D:\CSharp\HotelManagementNet\HotelManagementWebApi.Common\bin\Debug\netcoreapp3.1\HotelManagementWebApi.Common.runtimeconfig.dev.json
+D:\CSharp\HotelManagementNet\HotelManagementWebApi.Common\bin\Debug\netcoreapp3.1\HotelManagementWebApi.Common.dll
+D:\CSharp\HotelManagementNet\HotelManagementWebApi.Common\bin\Debug\netcoreapp3.1\HotelManagementWebApi.Common.pdb
+D:\CSharp\HotelManagementNet\HotelManagementWebApi.Common\obj\Debug\netcoreapp3.1\HotelManagementWebApi.Common.csproj.AssemblyReference.cache
+D:\CSharp\HotelManagementNet\HotelManagementWebApi.Common\obj\Debug\netcoreapp3.1\HotelManagementWebApi.Common.GeneratedMSBuildEditorConfig.editorconfig
+D:\CSharp\HotelManagementNet\HotelManagementWebApi.Common\obj\Debug\netcoreapp3.1\HotelManagementWebApi.Common.AssemblyInfoInputs.cache
+D:\CSharp\HotelManagementNet\HotelManagementWebApi.Common\obj\Debug\netcoreapp3.1\HotelManagementWebApi.Common.AssemblyInfo.cs
+D:\CSharp\HotelManagementNet\HotelManagementWebApi.Common\obj\Debug\netcoreapp3.1\HotelManagementWebApi.Common.csproj.CoreCompileInputs.cache
+D:\CSharp\HotelManagementNet\HotelManagementWebApi.Common\obj\Debug\netcoreapp3.1\HotelManagementWebApi.Common.dll
+D:\CSharp\HotelManagementNet\HotelManagementWebApi.Common\obj\Debug\netcoreapp3.1\HotelManagementWebApi.Common.pdb
+D:\CSharp\HotelManagementNet\HotelManagementWebApi.Common\obj\Debug\netcoreapp3.1\HotelManagementWebApi.Common.genruntimeconfig.cache

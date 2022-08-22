@@ -22,12 +22,12 @@ namespace HotelManagementWebApi.Controllers
             hotelSvc = new HotelSvc();
         }
 
-        // GET: api/Products/5
-        [HttpGet("{id}")]
-        public IActionResult GetHotels(int id)
+        // GET: api/Hotels
+        [HttpGet]
+        public IActionResult GetHotels()
         {
             var products = new SingleRsp();
-            products = hotelSvc.Read(id);
+            products = hotelSvc.GetAllHotels();
 
             if (products == null)
             {
@@ -37,17 +37,45 @@ namespace HotelManagementWebApi.Controllers
             return Ok(products);
         }
 
-        [HttpPost]
-        public IActionResult GetHotels([FromBody]SearchReq searhReq)
+        // GET: api/Hotels/id
+        [HttpGet("{id}")]
+        public IActionResult GetHotel(int id)
         {
-            var products = new SingleRsp();
-            products = hotelSvc.Search(searhReq);
-            if (products == null)
+            var hotels = new SingleRsp();
+            hotels = hotelSvc.Read(id);
+
+            if (hotels == null)
             {
                 return NotFound();
             }
 
-            return Ok(products);
+            return Ok(hotels);
+        }
+
+        // POST api/Hotels
+        [HttpPost]
+        public IActionResult GetHotels([FromBody] SearchReq searhReq)
+        {
+            var hotels = new SingleRsp();
+            hotels = hotelSvc.Search(searhReq);
+            if (hotels == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(hotels);
+        }
+
+        [HttpPost("create-hotel")]
+        public IActionResult CreateHotel([FromBody] HotelReq hotelReq)
+        {
+            var res = new SingleRsp();
+            res = hotelSvc.createHotel(hotelReq);
+            if (res == null)
+            {
+                return NotFound();
+            }
+            return Ok(res);
         }
     }
 }

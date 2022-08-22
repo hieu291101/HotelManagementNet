@@ -8503,11 +8503,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\CSharp\\HotelManagementWebApi\\HotelManagementWeb.DAL\\HotelManagementWebApi.DAL.csproj",
+      "projectUniqueName": "D:\\CSharp\\HotelManagementNet\\HotelManagementWeb.DAL\\HotelManagementWebApi.DAL.csproj",
       "projectName": "HotelManagementWebApi.DAL",
-      "projectPath": "D:\\CSharp\\HotelManagementWebApi\\HotelManagementWeb.DAL\\HotelManagementWebApi.DAL.csproj",
+      "projectPath": "D:\\CSharp\\HotelManagementNet\\HotelManagementWeb.DAL\\HotelManagementWebApi.DAL.csproj",
       "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "D:\\CSharp\\HotelManagementWebApi\\HotelManagementWeb.DAL\\obj\\",
+      "outputPath": "D:\\CSharp\\HotelManagementNet\\HotelManagementWeb.DAL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -8527,8 +8527,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "D:\\CSharp\\HotelManagementWebApi\\HotelManagementWebApi.Common\\HotelManagementWebApi.Common.csproj": {
-              "projectPath": "D:\\CSharp\\HotelManagementWebApi\\HotelManagementWebApi.Common\\HotelManagementWebApi.Common.csproj"
+            "D:\\CSharp\\HotelManagementNet\\HotelManagementWebApi.Common\\HotelManagementWebApi.Common.csproj": {
+              "projectPath": "D:\\CSharp\\HotelManagementNet\\HotelManagementWebApi.Common\\HotelManagementWebApi.Common.csproj"
             }
           }
         }

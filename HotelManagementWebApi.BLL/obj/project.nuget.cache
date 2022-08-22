@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "neDDiREZfGULIM6I5hvH080l/4lFHdNxgw7rirjIFjZqt1CYubvDR0ADJflXL4p2UigCbIcLDfQ3PE9rX/Ccpw==",
+  "dgSpecHash": "Zdg02WBpiW2g25yz25ZWvp1Gy1yyPGXW8tuk3uvx5LCKCHxGfUCZDrRvswmifF6ou4kboG+uZjDpOtGPuBlKBA==",
   "success": true,
-  "projectFilePath": "D:\\CSharp\\HotelManagementWebApi\\HotelManagementWebApi.BLL\\HotelManagementWebApi.BLL.csproj",
+  "projectFilePath": "D:\\CSharp\\HotelManagementNet\\HotelManagementWebApi.BLL\\HotelManagementWebApi.BLL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",

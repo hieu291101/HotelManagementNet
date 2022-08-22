@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uqwZ3CXDcaj6cEnkmhRQLThfKLhH3vFXSezlMW2ebwqu/EEuKM9xGcfwmbRiyAU3RHi1dc2au4hAsqRB0AUjQA==",
+  "dgSpecHash": "3eA2u5Ndb+ClODHDrkwWlHIyinK24DGdBzEutVom2PEJYF6SrNU36u6OzEQqqMobUGGvxkB5UZcFsaVzv0IHoQ==",
   "success": true,
-  "projectFilePath": "D:\\CSharp\\HotelManagementWebApi\\HotelManagementWebApi\\HotelManagementWebApi.csproj",
+  "projectFilePath": "D:\\CSharp\\HotelManagementNet\\HotelManagementWebApi\\HotelManagementWebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",

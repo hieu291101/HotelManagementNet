@@ -29,6 +29,42 @@ namespace HotelManagementWebApi.BLL
 
             return res;
         }
+
+        public SingleRsp GetAllHotels()
+        {
+            var res = new SingleRsp();
+            var data = _rep.All;
+            res.Data = data;
+            return res;
+        }
+
+        public SingleRsp createHotel(HotelReq hotelReq)
+        {
+            var res = new SingleRsp();
+            Hotels hotel = new Hotels();
+            hotel.HotelName = hotelReq.HotelName;
+            hotel.HotelContactNumber = hotelReq.HotelContactNumber;
+            hotel.HotelEmailAddress = hotelReq.HotelEmailAddress;
+            hotel.HotelWebsite = hotelReq.HotelWebsite;
+            hotel.HotelDescription = hotelReq.HotelDescription;
+            hotel.HotelFloorCount = hotelReq.HotelFloorCount;
+            hotel.HotelRoomCapacity = hotel.HotelRoomCapacity;
+            hotel.HotelChainId = hotelReq.HotelChainId;
+            //hotel.Address = new Addresses();
+            //hotel.Address.AddressLine1 = hotelReq.AddressLine1;
+            //hotel.Address.AddressLine2 = hotelReq.AddressLine2;
+            //hotel.Address.City = hotelReq.City;
+            //hotel.Address.State = hotelReq.State;
+            //hotel.Address.Country = hotelReq.Country;
+            //hotel.Address.ZipCode = hotelReq.ZipCode;
+            //hotel.Address.CreatedDateTime = new DateTime();
+            hotel.StarRatingId = hotelReq.StarRatingId;
+            hotel.CheckInTime = hotelReq.CheckInTime;
+            hotel.CheckOutTime = hotelReq.CheckOutTime;
+            hotel.CreatedDateTime = new DateTime();
+            res = _rep.CreateHotel(hotel);
+            return res;
+        }
         #region -- Overrides --
         public override SingleRsp Create(Hotels m)
         {
