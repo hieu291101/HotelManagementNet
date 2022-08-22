@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = HotelManagementWebApi.DAL
+build_property.ProjectDir = D:\CSharp\HotelManagementWebApi\HotelManagementWeb.DAL\
