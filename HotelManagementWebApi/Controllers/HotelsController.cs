@@ -1,9 +1,11 @@
 ﻿using HotelManagementWebApi.BLL;
+using HotelManagementWebApi.Common.Param;
 using HotelManagementWebApi.Common.Req;
 using HotelManagementWebApi.Common.Rsp;
 using HotelManagementWebApi.DAL.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,17 +26,35 @@ namespace HotelManagementWebApi.Controllers
 
         // GET: api/Hotels
         [HttpGet]
-        public IActionResult GetHotels()
+        public IActionResult GetHotels([FromQuery] QueryStringParameters hotelParameters)
         {
-            var products = new SingleRsp();
-            products = hotelSvc.GetAllHotels();
+            var hotels = new SingleRsp();
+            hotels = hotelSvc.GetAllHotels(hotelParameters);
 
-            if (products == null)
+            Response.Headers.Add("X-Pagination", JsonConvert.SerializeObject(hotels.Metadata));
+
+            if (hotels == null)
             {
                 return NotFound();
             }
 
-            return Ok(products);
+            return Ok(hotels);
+        }
+
+        [HttpGet("filter")]
+        public IActionResult GetHotels([FromQuery] HotelParameters hotelParameters)
+        {
+            var hotels = new SingleRsp();
+            hotels = hotelSvc.GetHotelsByCondition(hotelParameters);
+
+            Response.Headers.Add("X-Pagination", JsonConvert.SerializeObject(hotels.Metadata));
+
+            if (hotels == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(hotels);
         }
 
         // GET: api/Hotels/id
@@ -52,21 +72,8 @@ namespace HotelManagementWebApi.Controllers
             return Ok(hotels);
         }
 
-        // POST api/Hotels
+
         [HttpPost]
-        public IActionResult GetHotels([FromBody] SearchReq searhReq)
-        {
-            var hotels = new SingleRsp();
-            hotels = hotelSvc.Search(searhReq);
-            if (hotels == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(hotels);
-        }
-
-        [HttpPost("create-hotel")]
         public IActionResult CreateHotel([FromBody] HotelReq hotelReq)
         {
             var res = new SingleRsp();

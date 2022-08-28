@@ -179,12 +179,6 @@ namespace HotelManagementWebApi.Common.BLL
             return 0;
         }
 
-        public IQueryable<T> Search(Expression<Func<T, bool>> inStock)
-        {
-            return _rep.Search(inStock);
-        }
-
-
 
         /// <summary>
         /// Return query all data

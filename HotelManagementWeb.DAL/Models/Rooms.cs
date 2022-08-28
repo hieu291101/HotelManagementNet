@@ -18,5 +18,10 @@ namespace HotelManagementWebApi.DAL.Models
         public virtual Hotels Hotel { get; set; }
         public virtual RoomType RoomType { get; set; }
         public virtual RoomBooked RoomBooked { get; set; }
+
+        public override string ToString()
+        {
+            return String.Format("P.{1}", RoomNumber);
+        }
     }
 }

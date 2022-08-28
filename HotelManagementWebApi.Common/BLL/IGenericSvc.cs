@@ -95,8 +95,6 @@ namespace HotelManagementWebApi.Common.BLL
         /// <param name="id">Primary key</param>
         /// <returns>Number of affect</returns>
         int Remove(int id);
-
-        IQueryable<T> Search(Expression<Func<T, bool>> inStock);
         #endregion
 
         #region -- Properties --

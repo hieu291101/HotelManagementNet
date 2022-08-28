@@ -17,7 +17,7 @@ namespace HotelManagementWebApi.Common.DAL
         /// <param name="m">The model</param>
         public void Create(T m)
         {
-            _context.Set<T>().Add(m);
+            _context.Add<T>(m);
             _context.SaveChanges();
         }
 
@@ -126,21 +126,6 @@ namespace HotelManagementWebApi.Common.DAL
             var t = _context.Set<T>().Remove(m);
             return t.Entity;
         }
-
-
-        public virtual IQueryable<T> Search(Expression<Func<T, bool>> inStock)
-        {
-            IQueryable<T> res = All.Where(inStock);
-
-            return res;
-        }
-
-        public virtual List<T> limit(List<T> Ts, int offset, int size)
-        {
-            return null;
-        }
-
-
         #endregion
 
         #region -- Properties --

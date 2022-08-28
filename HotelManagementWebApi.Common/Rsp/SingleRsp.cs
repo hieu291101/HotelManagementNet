@@ -46,6 +46,10 @@ namespace HotelManagementWebApi.Common.Rsp
         /// </summary>
         public object Data { get; set; }
 
+        /// <summary>
+        /// Data
+        /// </summary>
+        public object Metadata { get; set; }
         #endregion
     }
 }
