@@ -54,15 +54,7 @@ namespace HotelManagementWebApi.Common.DAL
         /// </summary>
         /// <param name="l">List model</param>
         void Update(List<T> l);
-
-        /// <summary>
-        /// search list model
-        /// </summary>
-        /// <param name="inStock">predicate</param>
-        /// <param name="skip">offset</param>
-        /// <param name="take">size</param>
-        /// <returns>Return query data</returns>
-        IQueryable<T> Search(Expression<Func<T, bool>> inStock);
+   
         #endregion
 
         #region -- Properties --

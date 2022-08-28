@@ -30,5 +30,10 @@ namespace HotelManagementWebApi.DAL.Models
         public virtual Departments Department { get; set; }
         public virtual Hotels Hotel { get; set; }
         public virtual ICollection<Bookings> Bookings { get; set; }
+
+        public override string ToString()
+        {
+            return String.Format("{0} {1}", EmployeeFirstName, EmployeeLastName);
+        }
     }
 }

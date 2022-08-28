@@ -30,10 +30,15 @@ namespace HotelManagementWebApi.DAL.Models
         public virtual DbSet<RoomBooked> RoomBooked { get; set; }
         public virtual DbSet<RoomType> RoomType { get; set; }
         public virtual DbSet<Rooms> Rooms { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=NEWBIE\\MYSQLS;Database=Hotel;Trusted_Connection=True;");
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer("Data Source=NEWBIE\\MYSQLS;Initial Catalog=Hotel;Integrated Security=True;MultipleActiveResultSets=True;TrustServerCertificate=True");
+            }
         }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Addresses>(entity =>
@@ -262,10 +267,6 @@ namespace HotelManagementWebApi.DAL.Models
                 entity.HasKey(e => e.HotelId)
                     .HasName("PK_Hotel");
 
-                entity.HasIndex(e => e.AddressId)
-                    .HasName("UNQ_Hotel_Address")
-                    .IsUnique();
-
                 entity.Property(e => e.HotelId).HasColumnName("HotelID");
 
                 entity.Property(e => e.AddressId).HasColumnName("AddressID");
@@ -291,8 +292,8 @@ namespace HotelManagementWebApi.DAL.Models
                 entity.Property(e => e.StarRatingId).HasColumnName("StarRatingID");
 
                 entity.HasOne(d => d.Address)
-                    .WithOne(p => p.Hotels)
-                    .HasForeignKey<Hotels>(d => d.AddressId)
+                    .WithMany(p => p.Hotels)
+                    .HasForeignKey(d => d.AddressId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__Hotels__AddressI__2B3F6F97");
             });

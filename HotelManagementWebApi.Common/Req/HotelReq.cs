@@ -14,15 +14,14 @@ namespace HotelManagementWebApi.Common.Req
         public int? HotelFloorCount { get; set; }
         public int? HotelRoomCapacity { get; set; }
         public int? HotelChainId { get; set; }
-        public int AddressId { get; set; }
-        //public string AddressLine1 { get; set; }
-        //public string AddressLine2 { get; set; }
-        //public string City { get; set; }
-        //public string State { get; set; }
-        //public string Country { get; set; }
-        //public string ZipCode { get; set; }
+        public string AddressLine1 { get; set; }
+        public string AddressLine2 { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public string Country { get; set; }
+        public string ZipCode { get; set; }
         public int? StarRatingId { get; set; }
-        public TimeSpan? CheckInTime { get; set; }
-        public TimeSpan? CheckOutTime { get; set; }
+        public DateTime? CheckInTime { get; set; }
+        public DateTime? CheckOutTime { get; set; }
     }
 }

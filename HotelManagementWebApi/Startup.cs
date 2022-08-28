@@ -1,4 +1,3 @@
-using HotelManagementWebApi.DAL.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -14,6 +13,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Http;
+using HotelManagementWebApi.DAL.Models;
 
 namespace HotelManagementWebApi
 {
