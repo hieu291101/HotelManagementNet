@@ -1,38 +1,35 @@
 {
   "format": 1,
   "restore": {
-    "D:\\CSharp\\HotelManagementNet\\HotelManagementWebApi\\HotelManagementWebApi.csproj": {}
+    "E:\\LTCSDL\\BaiTap\\HotelManagementNet_2908\\HotelManagementNet\\HotelManagementWebApi\\HotelManagementWebApi.csproj": {}
   },
   "projects": {
-    "D:\\CSharp\\HotelManagementNet\\HotelManagementWeb.DAL\\HotelManagementWebApi.DAL.csproj": {
+    "E:\\LTCSDL\\BaiTap\\HotelManagementNet_2908\\HotelManagementNet\\HotelManagementWeb.DAL\\HotelManagementWebApi.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CSharp\\HotelManagementNet\\HotelManagementWeb.DAL\\HotelManagementWebApi.DAL.csproj",
+        "projectUniqueName": "E:\\LTCSDL\\BaiTap\\HotelManagementNet_2908\\HotelManagementNet\\HotelManagementWeb.DAL\\HotelManagementWebApi.DAL.csproj",
         "projectName": "HotelManagementWebApi.DAL",
-        "projectPath": "D:\\CSharp\\HotelManagementNet\\HotelManagementWeb.DAL\\HotelManagementWebApi.DAL.csproj",
-        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "D:\\CSharp\\HotelManagementNet\\HotelManagementWeb.DAL\\obj\\",
+        "projectPath": "E:\\LTCSDL\\BaiTap\\HotelManagementNet_2908\\HotelManagementNet\\HotelManagementWeb.DAL\\HotelManagementWebApi.DAL.csproj",
+        "packagesPath": "C:\\Users\\Tu Me\\.nuget\\packages\\",
+        "outputPath": "E:\\LTCSDL\\BaiTap\\HotelManagementNet_2908\\HotelManagementNet\\HotelManagementWeb.DAL\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Tu Me\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\CSharp\\HotelManagementNet\\HotelManagementWebApi.Common\\HotelManagementWebApi.Common.csproj": {
-                "projectPath": "D:\\CSharp\\HotelManagementNet\\HotelManagementWebApi.Common\\HotelManagementWebApi.Common.csproj"
+              "E:\\LTCSDL\\BaiTap\\HotelManagementNet_2908\\HotelManagementNet\\HotelManagementWebApi.Common\\HotelManagementWebApi.Common.csproj": {
+                "projectPath": "E:\\LTCSDL\\BaiTap\\HotelManagementNet_2908\\HotelManagementNet\\HotelManagementWebApi.Common\\HotelManagementWebApi.Common.csproj"
               }
             }
           }
@@ -89,38 +86,35 @@
         }
       }
     },
-    "D:\\CSharp\\HotelManagementNet\\HotelManagementWebApi.BLL\\HotelManagementWebApi.BLL.csproj": {
+    "E:\\LTCSDL\\BaiTap\\HotelManagementNet_2908\\HotelManagementNet\\HotelManagementWebApi.BLL\\HotelManagementWebApi.BLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CSharp\\HotelManagementNet\\HotelManagementWebApi.BLL\\HotelManagementWebApi.BLL.csproj",
+        "projectUniqueName": "E:\\LTCSDL\\BaiTap\\HotelManagementNet_2908\\HotelManagementNet\\HotelManagementWebApi.BLL\\HotelManagementWebApi.BLL.csproj",
         "projectName": "HotelManagementWebApi.BLL",
-        "projectPath": "D:\\CSharp\\HotelManagementNet\\HotelManagementWebApi.BLL\\HotelManagementWebApi.BLL.csproj",
-        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "D:\\CSharp\\HotelManagementNet\\HotelManagementWebApi.BLL\\obj\\",
+        "projectPath": "E:\\LTCSDL\\BaiTap\\HotelManagementNet_2908\\HotelManagementNet\\HotelManagementWebApi.BLL\\HotelManagementWebApi.BLL.csproj",
+        "packagesPath": "C:\\Users\\Tu Me\\.nuget\\packages\\",
+        "outputPath": "E:\\LTCSDL\\BaiTap\\HotelManagementNet_2908\\HotelManagementNet\\HotelManagementWebApi.BLL\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Tu Me\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\CSharp\\HotelManagementNet\\HotelManagementWeb.DAL\\HotelManagementWebApi.DAL.csproj": {
-                "projectPath": "D:\\CSharp\\HotelManagementNet\\HotelManagementWeb.DAL\\HotelManagementWebApi.DAL.csproj"
+              "E:\\LTCSDL\\BaiTap\\HotelManagementNet_2908\\HotelManagementNet\\HotelManagementWeb.DAL\\HotelManagementWebApi.DAL.csproj": {
+                "projectPath": "E:\\LTCSDL\\BaiTap\\HotelManagementNet_2908\\HotelManagementNet\\HotelManagementWeb.DAL\\HotelManagementWebApi.DAL.csproj"
               },
-              "D:\\CSharp\\HotelManagementNet\\HotelManagementWebApi.Common\\HotelManagementWebApi.Common.csproj": {
-                "projectPath": "D:\\CSharp\\HotelManagementNet\\HotelManagementWebApi.Common\\HotelManagementWebApi.Common.csproj"
+              "E:\\LTCSDL\\BaiTap\\HotelManagementNet_2908\\HotelManagementNet\\HotelManagementWebApi.Common\\HotelManagementWebApi.Common.csproj": {
+                "projectPath": "E:\\LTCSDL\\BaiTap\\HotelManagementNet_2908\\HotelManagementNet\\HotelManagementWebApi.Common\\HotelManagementWebApi.Common.csproj"
               }
             }
           }
@@ -177,27 +171,24 @@
         }
       }
     },
-    "D:\\CSharp\\HotelManagementNet\\HotelManagementWebApi.Common\\HotelManagementWebApi.Common.csproj": {
+    "E:\\LTCSDL\\BaiTap\\HotelManagementNet_2908\\HotelManagementNet\\HotelManagementWebApi.Common\\HotelManagementWebApi.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CSharp\\HotelManagementNet\\HotelManagementWebApi.Common\\HotelManagementWebApi.Common.csproj",
+        "projectUniqueName": "E:\\LTCSDL\\BaiTap\\HotelManagementNet_2908\\HotelManagementNet\\HotelManagementWebApi.Common\\HotelManagementWebApi.Common.csproj",
         "projectName": "HotelManagementWebApi.Common",
-        "projectPath": "D:\\CSharp\\HotelManagementNet\\HotelManagementWebApi.Common\\HotelManagementWebApi.Common.csproj",
-        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "D:\\CSharp\\HotelManagementNet\\HotelManagementWebApi.Common\\obj\\",
+        "projectPath": "E:\\LTCSDL\\BaiTap\\HotelManagementNet_2908\\HotelManagementNet\\HotelManagementWebApi.Common\\HotelManagementWebApi.Common.csproj",
+        "packagesPath": "C:\\Users\\Tu Me\\.nuget\\packages\\",
+        "outputPath": "E:\\LTCSDL\\BaiTap\\HotelManagementNet_2908\\HotelManagementNet\\HotelManagementWebApi.Common\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Tu Me\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -258,38 +249,35 @@
         }
       }
     },
-    "D:\\CSharp\\HotelManagementNet\\HotelManagementWebApi\\HotelManagementWebApi.csproj": {
+    "E:\\LTCSDL\\BaiTap\\HotelManagementNet_2908\\HotelManagementNet\\HotelManagementWebApi\\HotelManagementWebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CSharp\\HotelManagementNet\\HotelManagementWebApi\\HotelManagementWebApi.csproj",
+        "projectUniqueName": "E:\\LTCSDL\\BaiTap\\HotelManagementNet_2908\\HotelManagementNet\\HotelManagementWebApi\\HotelManagementWebApi.csproj",
         "projectName": "HotelManagementWebApi",
-        "projectPath": "D:\\CSharp\\HotelManagementNet\\HotelManagementWebApi\\HotelManagementWebApi.csproj",
-        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "D:\\CSharp\\HotelManagementNet\\HotelManagementWebApi\\obj\\",
+        "projectPath": "E:\\LTCSDL\\BaiTap\\HotelManagementNet_2908\\HotelManagementNet\\HotelManagementWebApi\\HotelManagementWebApi.csproj",
+        "packagesPath": "C:\\Users\\Tu Me\\.nuget\\packages\\",
+        "outputPath": "E:\\LTCSDL\\BaiTap\\HotelManagementNet_2908\\HotelManagementNet\\HotelManagementWebApi\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Tu Me\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\CSharp\\HotelManagementNet\\HotelManagementWebApi.BLL\\HotelManagementWebApi.BLL.csproj": {
-                "projectPath": "D:\\CSharp\\HotelManagementNet\\HotelManagementWebApi.BLL\\HotelManagementWebApi.BLL.csproj"
+              "E:\\LTCSDL\\BaiTap\\HotelManagementNet_2908\\HotelManagementNet\\HotelManagementWebApi.BLL\\HotelManagementWebApi.BLL.csproj": {
+                "projectPath": "E:\\LTCSDL\\BaiTap\\HotelManagementNet_2908\\HotelManagementNet\\HotelManagementWebApi.BLL\\HotelManagementWebApi.BLL.csproj"
               },
-              "D:\\CSharp\\HotelManagementNet\\HotelManagementWebApi.Common\\HotelManagementWebApi.Common.csproj": {
-                "projectPath": "D:\\CSharp\\HotelManagementNet\\HotelManagementWebApi.Common\\HotelManagementWebApi.Common.csproj"
+              "E:\\LTCSDL\\BaiTap\\HotelManagementNet_2908\\HotelManagementNet\\HotelManagementWebApi.Common\\HotelManagementWebApi.Common.csproj": {
+                "projectPath": "E:\\LTCSDL\\BaiTap\\HotelManagementNet_2908\\HotelManagementNet\\HotelManagementWebApi.Common\\HotelManagementWebApi.Common.csproj"
               }
             }
           }
