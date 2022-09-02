@@ -30,6 +30,7 @@ namespace HotelManagementWebApi.DAL.Models
         public virtual DbSet<RoomBooked> RoomBooked { get; set; }
         public virtual DbSet<RoomType> RoomType { get; set; }
         public virtual DbSet<Rooms> Rooms { get; set; }
+        //public virtual DbSet<GuestBookingInformation> GuestBookingInformation { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -329,7 +329,6 @@ E:\LTCSDL\BaiTap\HotelManagementNet_2908\HotelManagementNet\HotelManagementWebAp
 E:\LTCSDL\BaiTap\HotelManagementNet_2908\HotelManagementNet\HotelManagementWebApi\bin\Debug\netcoreapp3.1\Azure.Identity.dll
 E:\LTCSDL\BaiTap\HotelManagementNet_2908\HotelManagementNet\HotelManagementWebApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
 E:\LTCSDL\BaiTap\HotelManagementNet_2908\HotelManagementNet\HotelManagementWebApi\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
-E:\LTCSDL\BaiTap\HotelManagementNet_2908\HotelManagementNet\HotelManagementWebApi\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
 E:\LTCSDL\BaiTap\HotelManagementNet_2908\HotelManagementNet\HotelManagementWebApi\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
 E:\LTCSDL\BaiTap\HotelManagementNet_2908\HotelManagementNet\HotelManagementWebApi\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
 E:\LTCSDL\BaiTap\HotelManagementNet_2908\HotelManagementNet\HotelManagementWebApi\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
@@ -343,9 +342,7 @@ E:\LTCSDL\BaiTap\HotelManagementNet_2908\HotelManagementNet\HotelManagementWebAp
 E:\LTCSDL\BaiTap\HotelManagementNet_2908\HotelManagementNet\HotelManagementWebApi\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
 E:\LTCSDL\BaiTap\HotelManagementNet_2908\HotelManagementNet\HotelManagementWebApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
 E:\LTCSDL\BaiTap\HotelManagementNet_2908\HotelManagementNet\HotelManagementWebApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
-E:\LTCSDL\BaiTap\HotelManagementNet_2908\HotelManagementNet\HotelManagementWebApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
 E:\LTCSDL\BaiTap\HotelManagementNet_2908\HotelManagementNet\HotelManagementWebApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
-E:\LTCSDL\BaiTap\HotelManagementNet_2908\HotelManagementNet\HotelManagementWebApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
 E:\LTCSDL\BaiTap\HotelManagementNet_2908\HotelManagementNet\HotelManagementWebApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
 E:\LTCSDL\BaiTap\HotelManagementNet_2908\HotelManagementNet\HotelManagementWebApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 E:\LTCSDL\BaiTap\HotelManagementNet_2908\HotelManagementNet\HotelManagementWebApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
@@ -491,3 +488,5 @@ E:\LTCSDL\BaiTap\HotelManagementNet_2908\HotelManagementNet\HotelManagementWebAp
 E:\LTCSDL\BaiTap\HotelManagementNet_2908\HotelManagementNet\HotelManagementWebApi\obj\Debug\netcoreapp3.1\HotelManagementWebApi.dll
 E:\LTCSDL\BaiTap\HotelManagementNet_2908\HotelManagementNet\HotelManagementWebApi\obj\Debug\netcoreapp3.1\HotelManagementWebApi.pdb
 E:\LTCSDL\BaiTap\HotelManagementNet_2908\HotelManagementNet\HotelManagementWebApi\obj\Debug\netcoreapp3.1\HotelManagementWebApi.genruntimeconfig.cache
+E:\LTCSDL\BaiTap\HotelManagementNet_2908\HotelManagementNet\HotelManagementWebApi\bin\Debug\netcoreapp3.1\Humanizer.dll
+E:\LTCSDL\BaiTap\HotelManagementNet_2908\HotelManagementNet\HotelManagementWebApi\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll

@@ -13,49 +13,51 @@ namespace HotelManagementWebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class RoomsController : ControllerBase
+    public class GuestsController : ControllerBase
     {
-        private RoomSvc roomSvc;
-        public RoomsController()
+        private GuestSvc guestSvc;
+        public GuestsController()
         {
-            roomSvc = new RoomSvc();
+            guestSvc = new GuestSvc();
         }
-        [HttpGet]
-        public IActionResult GetRooms([FromQuery] QueryStringParameters roomParameter)
-        {
-            var res = new SingleRsp();
-            res = roomSvc.getAllRooms(roomParameter);
-            if (res == null)
-                NotFound();
-            return Ok(res);
-        }
+
+        //[HttpGet]
+        //public IActionResult GetGuests([FromQuery] QueryStringParameters guestParameter)
+        //{
+        //    var res = new SingleRsp();
+        //    res = guestSvc.getAllRooms(guestParameter);
+        //    if (res == null)
+        //        NotFound();
+        //    return Ok(res);
+        //}
 
         [HttpGet("{id}")]
-        public IActionResult GetRoom(int id)
+        public IActionResult GetGuest(int id)
         {
             var res = new SingleRsp();
-            res = roomSvc.Read(id);
+            res = guestSvc.Read(id);
             if (res == null)
                 NotFound();
             return Ok(res);
         }
 
-        [HttpGet("room/active")]
-        public IActionResult GetListRoomsByActive([FromQuery] RoomParameters roomParameter)
+        [HttpGet("guestByNumberPhone")]
+        public IActionResult GetGuestByNumberPhone(string numberPhone)
         {
 
             var res = new SingleRsp();
-            res = roomSvc.GetListRoomsByActive(roomParameter);
+            res = guestSvc.getGuestByNumberPhone(numberPhone);
             if (res == null)
                 NotFound();
             return Ok(res);
         }
+
 
         //[HttpGet("filter")]
         //public IActionResult GetRooms([FromQuery] RoomParameters RoomParameters)
         //{
         //    var rooms = new SingleRsp();
-        //    rooms = roomSvc.GetRoomsByCondition(RoomParameters);
+        //    rooms = guestSvc.GetRoomsByCondition(RoomParameters);
 
         //    Response.Headers.Add("X-Pagination", JsonConvert.SerializeObject(rooms.Metadata));
 
