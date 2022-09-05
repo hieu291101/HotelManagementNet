@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Http;
-using HotelManagementWebApi.DAL.Models;
+//using HotelManagementWebApi.DAL.Models;
 
 namespace HotelManagementWebApi
 {
@@ -31,12 +31,13 @@ namespace HotelManagementWebApi
         {
             #region -- DbConnection --
             var connection = Configuration.GetConnectionString("HotelDatabase");
-            services.AddDbContextPool<HotelContext>(options => options.UseSqlServer(connection));
+            //services.AddDbContextPool<HotelContext>(options => options.UseSqlServer(connection));
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             #endregion
 
             services.AddControllers();
 
+            services.AddCors();
             #region -- Swagger --  
             var inf1 = new OpenApiInfo
             {
@@ -83,6 +84,9 @@ namespace HotelManagementWebApi
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseCors(option 
+                => option.WithOrigins("http://localhost:4200")
+                            .AllowAnyHeader().AllowAnyMethod());
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -105,6 +109,7 @@ namespace HotelManagementWebApi
             {
                 endpoints.MapControllers();
             });
+
         }
     }
 }

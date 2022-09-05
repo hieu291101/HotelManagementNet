@@ -2,7 +2,7 @@
 using HotelManagementWebApi.Common.Param;
 using HotelManagementWebApi.Common.Req;
 using HotelManagementWebApi.Common.Rsp;
-using HotelManagementWebApi.DAL.Models;
+//using HotelManagementWebApi.DAL.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -38,10 +38,10 @@ namespace HotelManagementWebApi.Controllers
                 return NotFound();
             }
 
-            return Ok(hotels);
+            return Ok(hotels.Data);
         }
 
-        [HttpGet("filter")]
+        [HttpGet("filter")] 
         public IActionResult GetHotels([FromQuery] HotelParameters hotelParameters)
         {
             var hotels = new SingleRsp();
@@ -77,7 +77,25 @@ namespace HotelManagementWebApi.Controllers
         public IActionResult CreateHotel([FromBody] HotelReq hotelReq)
         {
             var res = new SingleRsp();
-            res = hotelSvc.createHotel(hotelReq);
+            res = hotelSvc.CreateHotel(hotelReq);
+            if (res == null)
+            {
+                return NotFound();
+            }
+            return Ok(res);
+        }
+        [HttpPut("{id}")]
+        public IActionResult UpdateHotel(int id, [FromBody] HotelReq hotelReq)
+        {
+            var res = new SingleRsp();
+            
+            if(hotelSvc.Read(id).Data != null)
+            {
+                hotelReq.HotelId = id;
+                res = hotelSvc.UpdateHotel(hotelReq);
+            }
+                
+
             if (res == null)
             {
                 return NotFound();

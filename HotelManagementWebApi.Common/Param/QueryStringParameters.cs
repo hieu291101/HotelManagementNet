@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HotelManagementWebApi.Common.Param
 {
-    public abstract class QueryStringParameters
+    public class QueryStringParameters
     {
         const int maxPageSize = 50;
         public int PageNumber { get; set; } = 1;

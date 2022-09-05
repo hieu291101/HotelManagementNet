@@ -9,11 +9,12 @@ namespace HotelManagementWebApi.DAL.Models
 {
     public partial class HotelChainHasHotel
     {
-        public int HotelChainId { get; set; }
+        public int HotelChainHasHotelId { get; set; }
         public int? HotelId { get; set; }
         public DateTime? CreatedDateTime { get; set; }
+        public int? HotelChainId { get; set; }
 
         public virtual Hotels Hotel { get; set; }
-        public virtual HotelChain HotelChain { get; set; }
+        public virtual HotelChain HotelChainHasHotelNavigation { get; set; }
     }
 }

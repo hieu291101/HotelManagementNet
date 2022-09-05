@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 // Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
 // If you have enabled NRTs for your project, then un-comment the following line:
@@ -9,7 +7,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HotelManagementWebApi.DAL.Models
 {
-    [Table("Hotels")]
     public partial class Hotels
     {
         public Hotels()
@@ -18,6 +15,7 @@ namespace HotelManagementWebApi.DAL.Models
             Employees = new HashSet<Employees>();
             Rooms = new HashSet<Rooms>();
         }
+
         public int HotelId { get; set; }
         public string HotelName { get; set; }
         public string HotelContactNumber { get; set; }
@@ -31,9 +29,8 @@ namespace HotelManagementWebApi.DAL.Models
         public int? StarRatingId { get; set; }
         public DateTime? CheckInTime { get; set; }
         public DateTime? CheckOutTime { get; set; }
-        public DateTime? CreatedDateTime { get; set; }
+        public DateTime CreatedDateTime { get; set; }
 
-        
         public virtual Addresses Address { get; set; }
         public virtual ICollection<Bookings> Bookings { get; set; }
         public virtual ICollection<Employees> Employees { get; set; }

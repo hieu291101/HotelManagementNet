@@ -6,6 +6,7 @@ namespace HotelManagementWebApi.Common.Req
 {
     public class HotelReq
     {
+        public int HotelId { get; set; } = 0;
         public string HotelName { get; set; }
         public string HotelContactNumber { get; set; }
         public string HotelEmailAddress { get; set; }
