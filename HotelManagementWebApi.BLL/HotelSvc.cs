@@ -24,7 +24,7 @@ namespace HotelManagementWebApi.BLL
             return _rep.GetHotelsByCondition(hotelParameters);
         }
 
-        public SingleRsp createHotel(HotelReq hotelReq)
+        public SingleRsp CreateHotel(HotelReq hotelReq)
         {
             var res = new SingleRsp();
             var address = new Addresses()
@@ -54,6 +54,39 @@ namespace HotelManagementWebApi.BLL
         };
              
             res = _rep.CreateHotel(hotel);
+            return res;
+        }
+
+        public SingleRsp UpdateHotel(HotelReq hotelReq)
+        {
+            var res = new SingleRsp();
+            var address = new Addresses()
+            {
+                AddressLine1 = hotelReq.AddressLine1,
+                AddressLine2 = hotelReq.AddressLine2,
+                City = hotelReq.City,
+                State = hotelReq.State,
+                Country = hotelReq.Country,
+                ZipCode = hotelReq.ZipCode
+            };
+            var hotel = new Hotels()
+            {
+                HotelId = hotelReq.HotelId,
+                HotelName = hotelReq.HotelName,
+                HotelContactNumber = hotelReq.HotelContactNumber,
+                HotelEmailAddress = hotelReq.HotelEmailAddress,
+                HotelWebsite = hotelReq.HotelWebsite,
+                HotelDescription = hotelReq.HotelDescription,
+                HotelFloorCount = hotelReq.HotelFloorCount,
+                HotelRoomCapacity = hotelReq.HotelRoomCapacity,
+                HotelChainId = hotelReq.HotelChainId,
+                Address = address,
+                StarRatingId = hotelReq.StarRatingId,
+                CheckInTime = hotelReq.CheckInTime,
+                CheckOutTime = hotelReq.CheckOutTime
+            };
+
+            res = _rep.UpdateHotel(hotel);
             return res;
         }
         #region -- Overrides --

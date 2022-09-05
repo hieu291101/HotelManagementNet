@@ -13,7 +13,7 @@ using HotelManagementWebApi.Common;
 namespace HotelManagementWebApi.DAL
 {
     public class HotelRep : GenericRep<HotelContext, Hotels>
-    {   
+    {
         #region -- Overide --
         public override Hotels Read(int id)
         {
@@ -24,7 +24,7 @@ namespace HotelManagementWebApi.DAL
         public SingleRsp GetAllHotels(QueryStringParameters hotelParameters)
         {
             var res = new SingleRsp();
-            var data = 
+            var data =
                 PagedList<Hotels>.ToPagedList(All, hotelParameters.PageNumber, hotelParameters.PageSize);
 
             var metadata = new
@@ -71,13 +71,14 @@ namespace HotelManagementWebApi.DAL
         {
             var res = new SingleRsp();
 
-            using(var tran = Context.Database.BeginTransaction())
+            using (var tran = Context.Database.BeginTransaction())
             {
                 try
                 {
                     Create(hotel);
                     tran.Commit();
-                } catch (Exception e)
+                }
+                catch (Exception e)
                 {
                     tran.Rollback();
                     res.SetError(e.StackTrace);
@@ -86,7 +87,25 @@ namespace HotelManagementWebApi.DAL
             return res;
         }
 
-        
+        public SingleRsp UpdateHotel(Hotels hotel)
+        {
+            var res = new SingleRsp();
+
+            using (var tran = Context.Database.BeginTransaction())
+            {
+                try
+                {
+                    Update(hotel);
+                    tran.Commit();
+                }
+                catch (Exception e)
+                {
+                    tran.Rollback();
+                    res.SetError(e.StackTrace);
+                }
+            }
+            return res;
+        }
 
     }
 }

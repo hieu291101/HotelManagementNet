@@ -9,19 +9,21 @@ namespace HotelManagementWebApi.DAL.Models
 {
     public partial class Rooms
     {
+        public Rooms()
+        {
+            Bookings = new HashSet<Bookings>();
+        }
+
         public int RoomId { get; set; }
         public int RoomNumber { get; set; }
         public int RoomTypeId { get; set; }
         public int HotelId { get; set; }
         public DateTime? CreatedDateTime { get; set; }
+        public int Active { get; set; }
 
         public virtual Hotels Hotel { get; set; }
         public virtual RoomType RoomType { get; set; }
         public virtual RoomBooked RoomBooked { get; set; }
-
-        public override string ToString()
-        {
-            return String.Format("P.{1}", RoomNumber);
-        }
+        public virtual ICollection<Bookings> Bookings { get; set; }
     }
 }

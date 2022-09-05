@@ -26,10 +26,12 @@ namespace HotelManagementWebApi.DAL.Models
         public int? EmployeeId { get; set; }
         public decimal? TotalAmount { get; set; }
         public DateTime? CreatedDateTime { get; set; }
+        public int? RoomId { get; set; }
 
         public virtual Employees Employee { get; set; }
         public virtual Guests Guest { get; set; }
         public virtual Hotels Hotel { get; set; }
+        public virtual Rooms Room { get; set; }
         public virtual ICollection<RoomBooked> RoomBooked { get; set; }
     }
 }

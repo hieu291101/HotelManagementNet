@@ -1,21 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+
 // Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
 // If you have enabled NRTs for your project, then un-comment the following line:
 // #nullable disable
 
 namespace HotelManagementWebApi.DAL.Models
 {
-    [Table("Addresses")]
     public partial class Addresses
     {
         public Addresses()
         {
+            Guests = new HashSet<Guests>();
             Hotels = new HashSet<Hotels>();
         }
-        [Key]
+
         public int AddressId { get; set; }
         public string AddressLine1 { get; set; }
         public string AddressLine2 { get; set; }
@@ -26,8 +25,8 @@ namespace HotelManagementWebApi.DAL.Models
         public DateTime? CreatedDateTime { get; set; }
 
         public virtual Employees Employees { get; set; }
-        public virtual Guests Guests { get; set; }
         public virtual HotelChain HotelChain { get; set; }
+        public virtual ICollection<Guests> Guests { get; set; }
         public virtual ICollection<Hotels> Hotels { get; set; }
     }
 }

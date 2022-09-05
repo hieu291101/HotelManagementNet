@@ -11,7 +11,7 @@ using System.Text;
 
 namespace HotelManagementWebApi.DAL
 {
-    public class BookingRep :GenericRep<HotelContext, Bookings>
+    public class BookingRep : GenericRep<HotelContext,Bookings>
     {
         #region -- Overide --
         public override Bookings Read(int id)
@@ -43,7 +43,7 @@ namespace HotelManagementWebApi.DAL
         {
             var bookings = All;
             if (bookingParameters.bookingDate != DateTime.MinValue)
-                bookings = 
+                bookings =
                     Read(b => b.BookingDate.Value.Date.CompareTo(bookingParameters.bookingDate.Date) == 0);
             var res = new SingleRsp();
             var data =
