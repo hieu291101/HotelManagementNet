@@ -51,6 +51,16 @@ namespace HotelManagementWebApi.Common.DAL
             return null;
         }
 
+        ///// <summary>
+        ///// Read single object
+        ///// </summary>
+        ///// <param name="active">Primary key</param>
+        ///// <returns>Return the object</returns>
+        //public virtual T ReadRoomActive(int active)
+        //{
+        //    return null;
+        //}
+
         /// <summary>
         /// Read single object
         /// </summary>

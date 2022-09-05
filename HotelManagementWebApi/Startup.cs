@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Http;
-//using HotelManagementWebApi.DAL.Models;
+using HotelManagementWebApi.DAL.Models;
 
 namespace HotelManagementWebApi
 {
@@ -31,7 +31,7 @@ namespace HotelManagementWebApi
         {
             #region -- DbConnection --
             var connection = Configuration.GetConnectionString("HotelDatabase");
-            //services.AddDbContextPool<HotelContext>(options => options.UseSqlServer(connection));
+            services.AddDbContextPool<HotelContext>(options => options.UseSqlServer(connection));
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             #endregion
 

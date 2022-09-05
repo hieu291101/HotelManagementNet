@@ -80,6 +80,16 @@ namespace HotelManagementWebApi.Common.BLL
         /// <summary>
         /// Read single object
         /// </summary>
+        /// <param name="active">Primary key</param>
+        /// <returns>Return the object</returns>
+        public virtual SingleRsp ReadRoomActive(int active)
+        {
+            return null;
+        }
+
+        /// <summary>
+        /// Read single object
+        /// </summary>
         /// <param name="code">Secondary key</param>
         /// <returns>Return the object</returns>
         public virtual SingleRsp Read(string code)
