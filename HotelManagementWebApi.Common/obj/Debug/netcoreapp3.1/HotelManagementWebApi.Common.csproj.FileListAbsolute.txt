@@ -37,3 +37,16 @@ D:\CSharp\HotelManagementNet\HotelManagementWebApi.Common\obj\Debug\netcoreapp3.
 D:\CSharp\HotelManagementNet\HotelManagementWebApi.Common\obj\Debug\netcoreapp3.1\HotelManagementWebApi.Common.pdb
 D:\CSharp\HotelManagementNet\HotelManagementWebApi.Common\obj\Debug\netcoreapp3.1\HotelManagementWebApi.Common.genruntimeconfig.cache
 D:\CSharp\HotelManagementNet\HotelManagementWebApi.Common\obj\Debug\netcoreapp3.1\HotelManagementWebApi.Common.csproj.AssemblyReference.cache
+E:\LTCSDL\BaiTap\HotelManagementNet_0509\HotelManagementNet\HotelManagementWebApi.Common\bin\Debug\netcoreapp3.1\HotelManagementWebApi.Common.deps.json
+E:\LTCSDL\BaiTap\HotelManagementNet_0509\HotelManagementNet\HotelManagementWebApi.Common\bin\Debug\netcoreapp3.1\HotelManagementWebApi.Common.runtimeconfig.json
+E:\LTCSDL\BaiTap\HotelManagementNet_0509\HotelManagementNet\HotelManagementWebApi.Common\bin\Debug\netcoreapp3.1\HotelManagementWebApi.Common.runtimeconfig.dev.json
+E:\LTCSDL\BaiTap\HotelManagementNet_0509\HotelManagementNet\HotelManagementWebApi.Common\bin\Debug\netcoreapp3.1\HotelManagementWebApi.Common.dll
+E:\LTCSDL\BaiTap\HotelManagementNet_0509\HotelManagementNet\HotelManagementWebApi.Common\bin\Debug\netcoreapp3.1\HotelManagementWebApi.Common.pdb
+E:\LTCSDL\BaiTap\HotelManagementNet_0509\HotelManagementNet\HotelManagementWebApi.Common\obj\Debug\netcoreapp3.1\HotelManagementWebApi.Common.csproj.AssemblyReference.cache
+E:\LTCSDL\BaiTap\HotelManagementNet_0509\HotelManagementNet\HotelManagementWebApi.Common\obj\Debug\netcoreapp3.1\HotelManagementWebApi.Common.GeneratedMSBuildEditorConfig.editorconfig
+E:\LTCSDL\BaiTap\HotelManagementNet_0509\HotelManagementNet\HotelManagementWebApi.Common\obj\Debug\netcoreapp3.1\HotelManagementWebApi.Common.AssemblyInfoInputs.cache
+E:\LTCSDL\BaiTap\HotelManagementNet_0509\HotelManagementNet\HotelManagementWebApi.Common\obj\Debug\netcoreapp3.1\HotelManagementWebApi.Common.AssemblyInfo.cs
+E:\LTCSDL\BaiTap\HotelManagementNet_0509\HotelManagementNet\HotelManagementWebApi.Common\obj\Debug\netcoreapp3.1\HotelManagementWebApi.Common.csproj.CoreCompileInputs.cache
+E:\LTCSDL\BaiTap\HotelManagementNet_0509\HotelManagementNet\HotelManagementWebApi.Common\obj\Debug\netcoreapp3.1\HotelManagementWebApi.Common.dll
+E:\LTCSDL\BaiTap\HotelManagementNet_0509\HotelManagementNet\HotelManagementWebApi.Common\obj\Debug\netcoreapp3.1\HotelManagementWebApi.Common.pdb
+E:\LTCSDL\BaiTap\HotelManagementNet_0509\HotelManagementNet\HotelManagementWebApi.Common\obj\Debug\netcoreapp3.1\HotelManagementWebApi.Common.genruntimeconfig.cache
