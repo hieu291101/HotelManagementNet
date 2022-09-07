@@ -26,6 +26,55 @@ namespace HotelManagementWebApi.DAL
             res.Data = data;
             return res;
         }
+
+        public SingleRsp ReadGuestLogin(string guestEmail, string numberPhone)
+        {
+            
+            var data = from g in Context.Guests
+                       where g.GuestContactNumber == numberPhone && g.GuestEmail == guestEmail
+                       select new { g.GuestFirstName
+                       , g.GuestLastName
+                       , g.GuestContactNumber
+                       };
+            var res = new SingleRsp();
+            res.Data = data;
+            return res;
+        }
+
+        public SingleRsp ReadRoomByPhoneNumber(string numberPhone)
+        {
+            var data = from g in Context.Guests
+                       join b in Context.Bookings on g.GuestId equals b.GuestId
+                       join h in Context.Hotels on b.HotelId equals h.HotelId
+                       join r in Context.Rooms on b.RoomId equals r.RoomId
+                       join rt in Context.RoomType on r.RoomTypeId equals rt.RoomTypeId
+                       where g.GuestContactNumber == numberPhone
+                       select new { b.GuestId
+                       , b.RoomId
+                       , r.RoomNumber
+                       , rt.RoomTypeName 
+                       , b.HotelId
+                       , h.HotelName
+                       , b.BookingDate
+                       , b.CheckInDate
+                       , b.CheckOutDate 
+                       , r.Active };
+            var res = new SingleRsp();
+            res.Data = data;
+            return res;
+        }
+
+        //public SingleRsp RegisterRoomByPhoneNumber(string guestEmail, string numberPhone)
+        //{
+
+        //    Context.Bookings.Add(new Bookings { });
+        //    Context.SaveChanges();
+            
+        //    var res = new SingleRsp();
+        //    //res.Data = data;
+        //    return res;
+        //}
+
         //public Dictionary<string, dynamic> ReadGuestByPhoneNumber(string numberPhone)   // dynamic là kiểu động (flexible)
         //{
 
@@ -48,7 +97,7 @@ namespace HotelManagementWebApi.DAL
         //{ "rooms" , roomNumberBooking },
         //{ "hotels" , hotelBooking }
         //};
-    
+
         #endregion
     }
 }

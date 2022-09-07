@@ -51,6 +51,7 @@ namespace HotelManagementWebApi.Controllers
             return Ok(res);
         }
 
+
         //[HttpGet("filter")]
         //public IActionResult GetRooms([FromQuery] RoomParameters RoomParameters)
         //{

@@ -65,5 +65,6 @@ namespace HotelManagementWebApi.Controllers
 
             return Ok(bookings);
         }
+
     }
 }

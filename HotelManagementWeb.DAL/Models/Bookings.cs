@@ -14,6 +14,17 @@ namespace HotelManagementWebApi.DAL.Models
             RoomBooked = new HashSet<RoomBooked>();
         }
 
+        public Bookings(DateTime? bookingDate, string durationStay, string bookingPaymentType, int? totalRoomsBooked, int? hotelId, decimal? totalAmount, int? roomId)
+        {
+            BookingDate = bookingDate;
+            DurationStay = durationStay ?? throw new ArgumentNullException(nameof(durationStay));
+            BookingPaymentType = bookingPaymentType ?? throw new ArgumentNullException(nameof(bookingPaymentType));
+            TotalRoomsBooked = totalRoomsBooked;
+            HotelId = hotelId;
+            TotalAmount = totalAmount;
+            RoomId = roomId;
+        }
+
         public int BookingId { get; set; }
         public DateTime? BookingDate { get; set; }
         public string DurationStay { get; set; }

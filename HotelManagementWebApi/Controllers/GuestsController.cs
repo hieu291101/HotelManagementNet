@@ -52,6 +52,39 @@ namespace HotelManagementWebApi.Controllers
             return Ok(res);
         }
 
+        [HttpGet("roomByNumberPhone")]
+        public IActionResult GetRoomByNumberPhone(string numberPhone)
+        {
+
+            var res = new SingleRsp();
+            res = guestSvc.getRoomByNumberPhone(numberPhone);
+            if (res == null)
+                NotFound();
+            return Ok(res);
+        }
+
+        [HttpGet("guestLogin")]
+        public IActionResult GetGuestLogin(string guestEmail, string numberPhone)
+        {
+
+            var res = new SingleRsp();
+            res = guestSvc.getGuestLogin(guestEmail, numberPhone);
+            if (res == null)
+                NotFound();
+            return Ok(res);
+        }
+
+        //[HttpPost("guestBookingRoom")]
+        //public IActionResult PostGuestBookingRoom(string guestEmail, string numberPhone)
+        //{
+
+        //    var res = new SingleRsp();
+        //    res = guestSvc.postGuestBookingRoom(guestEmail, numberPhone);
+        //    if (res == null)
+        //        NotFound();
+        //    return Ok(res);
+        //}
+
 
         //[HttpGet("filter")]
         //public IActionResult GetRooms([FromQuery] RoomParameters RoomParameters)

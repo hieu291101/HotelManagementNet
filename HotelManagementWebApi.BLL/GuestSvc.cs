@@ -11,6 +11,7 @@ namespace HotelManagementWebApi.BLL
 {
     public class GuestSvc : GenericSvc<GuestRep, Guests>
     {
+        // Tim thong tin phong khach hang theo so dien thoai
         public SingleRsp getGuestByNumberPhone(string numberPhone)
         {
             var res = new SingleRsp();   // Tao mot cai response
@@ -19,6 +20,35 @@ namespace HotelManagementWebApi.BLL
 
             return res;
         }
+
+        // Tim thong tin phong khach san theo so dien thoai
+        public SingleRsp getRoomByNumberPhone(string numberPhone)
+        {
+            var res = new SingleRsp();   // Tao mot cai response
+            var data = _rep.ReadRoomByPhoneNumber(numberPhone);  // tao bien data va gan numberphone doc duoc
+            res.Data = data;
+
+            return res;
+        }
+
+        public SingleRsp getGuestLogin(string guestEmail, string numberPhone)
+        {
+            var res = new SingleRsp();   // Tao mot cai response
+            var data = _rep.ReadGuestLogin(guestEmail, numberPhone);  // tao bien data va gan numberphone doc duoc
+            res.Data = data;
+
+            return res;
+        }
+
+        // Khach hang book phong
+        //public SingleRsp postGuestBookingRoom(string guestEmail, string numberPhone)
+        //{
+        //    var res = new SingleRsp();   
+        //    var data = _rep.RegisterRoomByPhoneNumber(guestEmail, numberPhone);
+        //    res.Data = data;
+
+        //    return res;
+        //}
 
         #region -- Overide --
         public override bool Equals(object obj)
