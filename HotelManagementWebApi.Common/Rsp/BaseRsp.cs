@@ -90,7 +90,7 @@ namespace HotelManagementWebApi.Common.Rsp
         /// <summary>
         /// Success
         /// </summary>
-        public bool Success { get; private set; }
+        public bool Success { get; set; }
 
         /// <summary>
         /// Error or success code

@@ -6,6 +6,12 @@ namespace HotelManagementWebApi.Common.Param
 {
     public class BookingParameters : QueryStringParameters
     {
-        public DateTime bookingDate { get; set; } = DateTime.MinValue;
+        public int bpGuestID { get; set; }
+        public int bpRoomID { get; set; }
+        public int bpHotelID { get; set; }
+        public DateTime bpCheckInDate { get; set; } = DateTime.MinValue;
+        public DateTime bpCheckOutDate { get; set; } = DateTime.MinValue;
+        public int bpEmployeeID { get; set; }
+
     }
 }

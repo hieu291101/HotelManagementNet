@@ -3,6 +3,7 @@ using HotelManagementWebApi.Common.Param;
 using HotelManagementWebApi.Common.Rsp;
 using HotelManagementWebApi.DAL;
 using HotelManagementWebApi.DAL.Models;
+using HotelManagementWebApi.Common.DAL;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -20,6 +21,47 @@ namespace HotelManagementWebApi.BLL
         {
             return _rep.GetBookingsByCondition(bookingParameters);
         }
+
+        public SingleRsp postGuestBookingRoomByGuest(BookingParameters bookingParameters)
+        {
+            var res = new SingleRsp();
+            string calculateDurationStay = (bookingParameters.bpCheckOutDate - bookingParameters.bpCheckInDate).TotalDays.ToString();
+
+            var booking = new Bookings()
+            {
+                GuestId = bookingParameters.bpGuestID,
+                RoomId = bookingParameters.bpRoomID,
+                HotelId = bookingParameters.bpHotelID,
+                CheckInDate = bookingParameters.bpCheckInDate,
+                CheckOutDate = bookingParameters.bpCheckOutDate,
+                DurationStay = calculateDurationStay,
+                BookingDate = DateTime.Now
+            };
+            res = _rep.CreateBooking(booking);
+            return res;
+        }
+
+        public SingleRsp postGuestBookingRoomByEmployee(BookingParameters bookingParameters)
+        {
+            var res = new SingleRsp();
+            string calculateDurationStay = (bookingParameters.bpCheckOutDate - bookingParameters.bpCheckInDate).TotalDays.ToString();
+
+            var booking = new Bookings()
+            {
+                GuestId = bookingParameters.bpGuestID,
+                RoomId = bookingParameters.bpRoomID,
+                HotelId = bookingParameters.bpHotelID,
+                CheckInDate = bookingParameters.bpCheckInDate,
+                CheckOutDate = bookingParameters.bpCheckOutDate,
+                DurationStay = calculateDurationStay,
+                BookingDate = DateTime.Now,
+                EmployeeId = bookingParameters.bpEmployeeID
+            };
+            res = _rep.CreateBooking(booking);
+            return res;
+        }
+
+
         #region -- Overide --
         public override bool Equals(object obj)
         {

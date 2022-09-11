@@ -64,5 +64,15 @@ namespace HotelManagementWebApi.DAL
             res.Metadata = metadata;
             return res;
         }
+
+        public int GetRoomDeactive(int roomID)
+        {
+            //var res = new SingleRsp();
+            var data = from r in Context.Rooms
+                       where r.RoomId == roomID
+                       select r.Active ;
+                   
+            return data.SingleOrDefault();
+        }
     }
 }

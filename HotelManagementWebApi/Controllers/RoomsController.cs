@@ -40,7 +40,7 @@ namespace HotelManagementWebApi.Controllers
             return Ok(res);
         }
 
-        [HttpGet("room/active")]
+        [HttpGet("room/listActive")]
         public IActionResult GetListRoomsByActive([FromQuery] RoomParameters roomParameter)
         {
 
@@ -50,6 +50,17 @@ namespace HotelManagementWebApi.Controllers
                 NotFound();
             return Ok(res);
         }
+
+        //[HttpGet("room/deactive")]
+        //public IActionResult GetRoomDeactive(int roomID)
+        //{
+
+        //    var res = new SingleRsp();
+        //    res = roomSvc.GetRoomDeactive(roomID);
+        //    if (res == null)
+        //        NotFound();
+        //    return Ok(res);
+        //}
 
 
         //[HttpGet("filter")]

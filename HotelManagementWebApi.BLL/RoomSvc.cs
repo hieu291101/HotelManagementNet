@@ -20,6 +20,12 @@ namespace HotelManagementWebApi.BLL
         {
             return _rep.GetListRoomsByActive(roomParameters);
         }
+        public int GetRoomDeactive(int roomID)
+        {
+            return _rep.GetRoomDeactive(roomID);
+        }
+
+
         #region -- Overide --
         public override bool Equals(object obj)
         {
