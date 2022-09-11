@@ -12,6 +12,7 @@ namespace HotelManagementWebApi.BLL
 {
     public class BookingSvc : GenericSvc<BookingRep, Bookings>
     {
+        RoomRep roomRep = new RoomRep();
         public SingleRsp getAllBookings(QueryStringParameters bookingParameters) 
         {
             return _rep.GetAllBookings(bookingParameters);
@@ -20,6 +21,16 @@ namespace HotelManagementWebApi.BLL
         public SingleRsp GetBookingsByCondition(BookingParameters bookingParameters)
         {
             return _rep.GetBookingsByCondition(bookingParameters);
+        }
+
+        public int GetRoomIDByBookingID(int bookingID)
+        {
+            return _rep.GetRoomIDByBookingID(bookingID);
+        }
+
+        public int GetBookingByID(int bookingID)
+        {
+            return _rep.GetBookingByID(bookingID);
         }
 
         public SingleRsp postGuestBookingRoomByGuest(BookingParameters bookingParameters)
@@ -38,6 +49,9 @@ namespace HotelManagementWebApi.BLL
                 BookingDate = DateTime.Now
             };
             res = _rep.CreateBooking(booking);
+            //if(res.)
+            roomRep.updateRoomDeactive(bookingParameters.bpRoomID);
+            
             return res;
         }
 

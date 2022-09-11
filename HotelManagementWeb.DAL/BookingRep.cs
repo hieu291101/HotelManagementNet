@@ -12,7 +12,7 @@ using System.Data.SqlClient;
 
 namespace HotelManagementWebApi.DAL
 {
-    public class BookingRep : GenericRep<HotelContext,Bookings>
+    public class BookingRep : GenericRep<HotelContext, Bookings>
     {
         #region -- Overide --
         public override Bookings Read(int id)
@@ -70,7 +70,7 @@ namespace HotelManagementWebApi.DAL
             using (var tran = Context.Database.BeginTransaction())
             {
                 try
-                {                 
+                {
                     Create(booking);
                     tran.Commit();
                 }
@@ -86,11 +86,32 @@ namespace HotelManagementWebApi.DAL
         public SingleRsp CreateBookingEmployee(Bookings booking)
         {
             var res = new SingleRsp();
-            
-            
+
+
 
 
             return res;
         }
+
+        public int GetRoomIDByBookingID(int bookingID)
+        {
+            //var res = new SingleRsp();
+            var data = from b in Context.Bookings
+                       where b.BookingId == bookingID
+                       select b.RoomId;
+
+            return data.SingleOrDefault();
+        }
+        public int GetBookingByID(int bookingID)
+        {
+            //var res = new SingleRsp();
+            var data = from b in Context.Bookings
+                       where b.BookingId == bookingID
+                       select b.BookingId;
+
+            return data.SingleOrDefault();
+
+        }
     }
+
 }

@@ -35,6 +35,7 @@ namespace HotelManagementWebApi.DAL.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseSqlServer("Data Source=HUYNHTANTU\\SQLSERVER;Initial Catalog=Hotel;Integrated Security=True;MultipleActiveResultSets=True;TrustServerCertificate=True");
             }
         }
@@ -97,12 +98,12 @@ namespace HotelManagementWebApi.DAL.Models
                 entity.HasOne(d => d.Employee)
                     .WithMany(p => p.Bookings)
                     .HasForeignKey(d => d.EmployeeId)
-                    .HasConstraintName("FK__Bookings__Employ__20C1E124");
+                    .HasConstraintName("FK__Bookings__Employ__6FE99F9F");
 
                 entity.HasOne(d => d.Guest)
                     .WithMany(p => p.Bookings)
                     .HasForeignKey(d => d.GuestId)
-                    .HasConstraintName("FK__Bookings__GuestI__21B6055D");
+                    .HasConstraintName("FK__Bookings__GuestI__6EF57B66");
 
                 entity.HasOne(d => d.Hotel)
                     .WithMany(p => p.Bookings)
@@ -166,12 +167,12 @@ namespace HotelManagementWebApi.DAL.Models
                 entity.HasOne(d => d.Address)
                     .WithOne(p => p.Employees)
                     .HasForeignKey<Employees>(d => d.AddressId)
-                    .HasConstraintName("FK__Employees__Addre__24927208");
+                    .HasConstraintName("FK__Employees__Addre__6C190EBB");
 
                 entity.HasOne(d => d.Department)
                     .WithMany(p => p.Employees)
                     .HasForeignKey(d => d.DepartmentId)
-                    .HasConstraintName("FK__Employees__Depar__25869641");
+                    .HasConstraintName("FK__Employees__Depar__628FA481");
 
                 entity.HasOne(d => d.Hotel)
                     .WithMany(p => p.Employees)
@@ -208,7 +209,7 @@ namespace HotelManagementWebApi.DAL.Models
                 entity.HasOne(d => d.Address)
                     .WithMany(p => p.Guests)
                     .HasForeignKey(d => d.AddressId)
-                    .HasConstraintName("FK__Guests__AddressI__276EDEB3");
+                    .HasConstraintName("FK__Guests__AddressI__1AD3FDA4");
             });
 
             modelBuilder.Entity<HotelChain>(entity =>
@@ -236,7 +237,7 @@ namespace HotelManagementWebApi.DAL.Models
                 entity.HasOne(d => d.HotelChainHeadOfficeAddress)
                     .WithOne(p => p.HotelChain)
                     .HasForeignKey<HotelChain>(d => d.HotelChainHeadOfficeAddressId)
-                    .HasConstraintName("FK__HotelChai__Hotel__286302EC");
+                    .HasConstraintName("FK__HotelChai__Hotel__66603565");
             });
 
             modelBuilder.Entity<HotelChainHasHotel>(entity =>
@@ -259,7 +260,7 @@ namespace HotelManagementWebApi.DAL.Models
                     .WithMany()
                     .HasForeignKey(d => d.HotelChainHasHotelId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__HotelChai__Hotel__2A4B4B5E");
+                    .HasConstraintName("FK__HotelChai__Hotel__619B8048");
 
                 entity.HasOne(d => d.Hotel)
                     .WithMany()
@@ -323,7 +324,7 @@ namespace HotelManagementWebApi.DAL.Models
                 entity.HasOne(d => d.Booking)
                     .WithMany(p => p.RoomBooked)
                     .HasForeignKey(d => d.BookingId)
-                    .HasConstraintName("FK__RoomBooke__Booki__2C3393D0");
+                    .HasConstraintName("FK__RoomBooke__Booki__5629CD9C");
 
                 entity.HasOne(d => d.Room)
                     .WithOne(p => p.RoomBooked)

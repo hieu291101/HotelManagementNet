@@ -25,6 +25,11 @@ namespace HotelManagementWebApi.BLL
             return _rep.GetRoomDeactive(roomID);
         }
 
+        public int UpdateRoomDeactive(int roomID)
+        {
+            return _rep.GetRoomDeactive(roomID);
+        }
+
 
         #region -- Overide --
         public override bool Equals(object obj)

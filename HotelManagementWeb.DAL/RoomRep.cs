@@ -74,5 +74,37 @@ namespace HotelManagementWebApi.DAL
                    
             return data.SingleOrDefault();
         }
+
+        // 
+        public SingleRsp updateRoomDeactive(int roomID)
+        {
+            var res = new SingleRsp();
+            var data = Context.Rooms.Single(r => r.RoomId == roomID);
+            data.Active = 1;
+            Context.SaveChanges();
+
+             return res;
+        }
+
+        //public SingleRsp UpdateRoomActive(Rooms room)
+        //{
+        //    var res = new SingleRsp();
+
+        //    using (var tran = Context.Database.BeginTransaction())
+        //    {
+        //        try
+        //        {
+        //            Update(room);
+        //            tran.Commit();
+        //        }
+        //        catch (Exception e)
+        //        {
+        //            tran.Rollback();
+        //            res.SetError(e.StackTrace);
+        //        }
+        //    }
+        //    return res;
     }
-}
+
+    }
+

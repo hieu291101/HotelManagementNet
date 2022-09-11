@@ -3,6 +3,7 @@ using HotelManagementWebApi.Common.Param;
 using HotelManagementWebApi.Common.Rsp;
 using HotelManagementWebApi.DAL;
 using HotelManagementWebApi.DAL.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -24,20 +25,19 @@ namespace HotelManagementWebApi.BLL
         // Tim thong tin phong khach san theo so dien thoai
         public SingleRsp getRoomByNumberPhone(string numberPhone)
         {
-            var res = new SingleRsp();   // Tao mot cai response
-            var data = _rep.ReadRoomByPhoneNumber(numberPhone);  // tao bien data va gan numberphone doc duoc
-            res.Data = data;
-
-            return res;
+            //var res = _rep.ReadRoomByPhoneNumber(numberPhone);
+            ////string resConvert = JsonConvert.SerializeObject(res.Data);
+            //var resMap = JsonConvert.DeserializeObject<Dictionary<string, dynamic>>(res.Data);
+            //System.Diagnostics.Debug.WriteLine("check data converted :" + resMap);
+            //Console.WriteLine("check data converted :" + resMap["RoomTypeName"]);
+            return _rep.ReadRoomByPhoneNumber(numberPhone);  // tao bien data va gan numberphone doc duoc
         }
 
         public SingleRsp getGuestLogin(string guestEmail, string numberPhone)
         {
-            var res = new SingleRsp();   // Tao mot cai response
-            var data = _rep.ReadGuestLogin(guestEmail, numberPhone);  // tao bien data va gan numberphone doc duoc
-            res.Data = data;
+        
 
-            return res;
+            return  _rep.ReadGuestLogin(guestEmail, numberPhone);  // tao bien data va gan numberphone doc duoc
         }
 
         // Khach hang book phong

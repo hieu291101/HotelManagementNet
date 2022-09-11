@@ -59,8 +59,9 @@ namespace HotelManagementWebApi.DAL
                        , b.CheckInDate
                        , b.CheckOutDate 
                        , r.Active };
+
             var res = new SingleRsp();
-            res.Data = data;
+            res.Data = data.SingleOrDefault();
             return res;
         }
 
