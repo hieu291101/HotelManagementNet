@@ -88,11 +88,14 @@ namespace HotelManagementWebApi.Controllers
         public IActionResult UpdateHotel(int id, [FromBody] HotelReq hotelReq)
         {
             var res = new SingleRsp();
-            
-            if(hotelSvc.Read(id).Data != null)
+
+            var hotel = hotelSvc.ReadModel(id).Data;
+
+
+            if (hotel != null)
             {
                 hotelReq.HotelId = id;
-                res = hotelSvc.UpdateHotel(hotelReq);
+                res = hotelSvc.UpdateHotel(hotelReq, hotel);
             }
                 
 

@@ -14,7 +14,14 @@ namespace HotelManagementWebApi.BLL
 {
     public class HotelSvc : GenericSvc<HotelRep, Hotels>
     {
-
+        public SingleRsp ReadModel(int id)
+        {
+            var res = new SingleRsp();
+            var data = _rep.ReadModel(id);
+            res.Data = data;
+            Console.WriteLine("checking data " + res.Data);
+            return res;
+        }
         public SingleRsp GetAllHotels(QueryStringParameters hotelParameters)
         {
             return _rep.GetAllHotels(hotelParameters);
@@ -24,6 +31,7 @@ namespace HotelManagementWebApi.BLL
             return _rep.GetHotelsByCondition(hotelParameters);
         }
 
+    
         public SingleRsp CreateHotel(HotelReq hotelReq)
         {
             var res = new SingleRsp();
@@ -57,18 +65,28 @@ namespace HotelManagementWebApi.BLL
             return res;
         }
 
-        public SingleRsp UpdateHotel(HotelReq hotelReq)
+        public SingleRsp UpdateHotel(HotelReq hotelReq, object ob)
         {
             var res = new SingleRsp();
+            int addressId = 0;
+            Hotels hotelModel;
+            hotelModel = (ob as Hotels);
+            
+            if (hotelModel.AddressId != null)
+                addressId = (int)hotelModel.AddressId;
+
             var address = new Addresses()
             {
+                AddressId = addressId,
                 AddressLine1 = hotelReq.AddressLine1,
                 AddressLine2 = hotelReq.AddressLine2,
                 City = hotelReq.City,
                 State = hotelReq.State,
                 Country = hotelReq.Country,
-                ZipCode = hotelReq.ZipCode
+                ZipCode = hotelReq.ZipCode,
+                CreatedDateTime = hotelModel.Address.CreatedDateTime
             };
+
             var hotel = new Hotels()
             {
                 HotelId = hotelReq.HotelId,
@@ -81,9 +99,11 @@ namespace HotelManagementWebApi.BLL
                 HotelRoomCapacity = hotelReq.HotelRoomCapacity,
                 HotelChainId = hotelReq.HotelChainId,
                 Address = address,
+                AddressId = addressId,
                 StarRatingId = hotelReq.StarRatingId,
                 CheckInTime = hotelReq.CheckInTime,
-                CheckOutTime = hotelReq.CheckOutTime
+                CheckOutTime = hotelReq.CheckOutTime,
+                CreatedDateTime = hotelModel.CreatedDateTime
             };
 
             res = _rep.UpdateHotel(hotel);
@@ -125,7 +145,7 @@ namespace HotelManagementWebApi.BLL
             var res = new SingleRsp();
             var data = _rep.Read(id);
             res.Data = data;
-
+            Console.WriteLine("checking data "+res.Data);
             return res;
         }
 

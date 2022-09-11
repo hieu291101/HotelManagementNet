@@ -15,6 +15,7 @@ namespace HotelManagementWebApi.Common.Req
         public int? HotelFloorCount { get; set; }
         public int? HotelRoomCapacity { get; set; }
         public int? HotelChainId { get; set; }
+        public int AddressId { get; set; }
         public string AddressLine1 { get; set; }
         public string AddressLine2 { get; set; }
         public string City { get; set; }
