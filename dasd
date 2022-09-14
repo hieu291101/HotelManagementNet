@@ -1,0 +1,208 @@
+[33mcommit 7d613d5dd9ac976ee7f14c4bf3a4fe2bfdc2a3a1[m[33m ([m[1;36mHEAD -> [m[1;32mDevfinal[m[33m, [m[1;31morigin/Devfinal[m[33m)[m
+Author: bt-tantu <bt.tantu@gmail.com>
+Date:   Thu Sep 15 05:02:00 2022 +0700
+
+    Login
+
+[33mcommit fead59dda4c075935583f5b595c1fc5e801266a4[m
+Author: bt-tantu <bt.tantu@gmail.com>
+Date:   Thu Sep 15 04:50:40 2022 +0700
+
+    Login
+
+[33mcommit 54ede36d6fb5e967ae68b9a85177a0380671dd5b[m
+Author: hieulatrung2911 <hieu.latrung2911@gmail.com>
+Date:   Thu Sep 15 04:23:04 2022 +0700
+
+    ui
+
+[33mcommit 4ccd3f172fd14f7a02c4cc5c68e598dfff3d02e7[m
+Author: hieulatrung2911 <hieu.latrung2911@gmail.com>
+Date:   Thu Sep 15 02:09:44 2022 +0700
+
+    final api
+
+[33mcommit eea5f5dfed5d67531fdb447eaed1c8aa1c3f59db[m[33m ([m[1;31morigin/LeTrungHieu[m[33m)[m
+Merge: fec0a0c e9f4324
+Author: hieulatrung2911 <hieu.latrung2911@gmail.com>
+Date:   Wed Sep 14 22:52:17 2022 +0700
+
+    final
+
+[33mcommit fec0a0cdd4dcc5881d83c382cf62643950b37016[m
+Author: hieulatrung2911 <hieu.latrung2911@gmail.com>
+Date:   Wed Sep 14 22:26:43 2022 +0700
+
+    statistic period
+
+[33mcommit d43945f3f9c3f075a332447e0cd155f7b8027f03[m
+Author: hieulatrung2911 <hieu.latrung2911@gmail.com>
+Date:   Wed Sep 14 22:00:10 2022 +0700
+
+    statistic
+
+[33mcommit e9f43249def499dc456128b696a635fab7c49ab1[m[33m ([m[1;31morigin/TuDev_2[m[33m)[m
+Author: bt-tantu <bt.tantu@gmail.com>
+Date:   Wed Sep 14 16:28:58 2022 +0700
+
+    Front End
+
+[33mcommit 5be3bbca989d51c92378bfacfcebdcfc87700d7e[m
+Author: bt-tantu <bt.tantu@gmail.com>
+Date:   Wed Sep 14 16:22:32 2022 +0700
+
+    FE
+
+[33mcommit 8b70a5b4541a7f3b7b798b6b3ad13dbe6d360893[m
+Merge: ea38830 a2ba162
+Author: hieulatrung2911 <hieu.latrung2911@gmail.com>
+Date:   Wed Sep 14 16:20:27 2022 +0700
+
+    create delete hotel
+
+[33mcommit a2ba16229565083dd1a6d62bbc130a71fe202668[m
+Author: hieulatrung2911 <hieu.latrung2911@gmail.com>
+Date:   Wed Sep 14 16:09:05 2022 +0700
+
+    update delete Hotel
+
+[33mcommit 51a850191bce46a3f9086f5348bad2f4671ff3e1[m
+Author: bt-tantu <bt.tantu@gmail.com>
+Date:   Wed Sep 14 08:04:33 2022 +0700
+
+    Front End
+
+[33mcommit b98632a024e050bba4251fb11d25b708e009c05c[m
+Author: bt-tantu <bt.tantu@gmail.com>
+Date:   Sun Sep 11 22:41:18 2022 +0700
+
+    Tume
+
+[33mcommit 9b9b2530829c6d0af9853e7fd33c90add48246ab[m
+Author: hieulatrung2911 <hieu.latrung2911@gmail.com>
+Date:   Sun Sep 11 22:39:29 2022 +0700
+
+    1
+
+[33mcommit ea38830eed1270c1e0c3124f2f9e2eec44740dc4[m
+Author: hieulatrung2911 <hieu.latrung2911@gmail.com>
+Date:   Sun Sep 11 22:37:50 2022 +0700
+
+    update hotel
+
+[33mcommit 490770b786fe474d98904ef0ba9d362c67818a64[m
+Author: hieulatrung2911 <hieu.latrung2911@gmail.com>
+Date:   Sun Sep 11 22:11:57 2022 +0700
+
+    update Hotels
+
+[33mcommit 440866d23fbd61596ad62cfe42162df952459538[m
+Author: bt-tantu <bt.tantu@gmail.com>
+Date:   Sun Sep 11 22:09:13 2022 +0700
+
+    Finished API for Booking module
+
+[33mcommit 113aadfcb0402127845d481af867a1f8dd450595[m
+Author: bt-tantu <bt.tantu@gmail.com>
+Date:   Sun Sep 11 15:12:02 2022 +0700
+
+    Upload API booking room
+
+[33mcommit cc405f158c1c87861e1d031d192299ebb21d6c21[m
+Author: bt-tantu <bt.tantu@gmail.com>
+Date:   Thu Sep 8 00:18:48 2022 +0700
+
+    Get infor booking from numberphone of guest
+
+[33mcommit 2b0f82550eff07557f4f1a9b044d6b2531f5ab75[m
+Author: bt-tantu <bt.tantu@gmail.com>
+Date:   Tue Sep 6 19:24:30 2022 +0700
+
+    Get guest by numberphone
+
+[33mcommit a9bc94bb0b53e26c5ed5b97de66c00baf4911a15[m
+Merge: 1451ea1 7b213b9
+Author: hieulatrung2911 <hieu.latrung2911@gmail.com>
+Date:   Mon Sep 5 21:43:35 2022 +0700
+
+    merge complete
+
+[33mcommit 1451ea11ee546466951031a726281f8250d778cb[m
+Merge: f44b95d 49e208f
+Author: hieulatrung2911 <hieu.latrung2911@gmail.com>
+Date:   Mon Sep 5 21:03:40 2022 +0700
+
+    merge LaTrungHieu and main
+
+[33mcommit 49e208f65ccbbf12ee1bf8d618aa1aa4b31a3be0[m
+Author: hieulatrung2911 <hieu.latrung2911@gmail.com>
+Date:   Mon Sep 5 20:51:58 2022 +0700
+
+    5.9.2022 - sync new Model
+
+[33mcommit 7b213b9f4083096b7943cdfbce4cd9f3c62282ea[m
+Author: bt.tantu <bt.tantu@gmail.com>
+Date:   Fri Sep 2 12:35:04 2022 +0700
+
+    Create module: Get rooms by active and get single room by active
+
+[33mcommit f44b95da2764ddab819d8b5feb2d39e17c8e692d[m
+Merge: 5898656 283a1f5
+Author: hieulatrung2911 <hieu.latrung2911@gmail.com>
+Date:   Sun Aug 28 15:29:34 2022 +0700
+
+    delete old search, pagination method; create new class to do pagination and build class to get parameter in query, build booking API(get, filter)
+
+[33mcommit 283a1f5fb2285a3011b4244c60f671880c49a2df[m
+Author: hieulatrung2911 <hieu.latrung2911@gmail.com>
+Date:   Sun Aug 28 15:06:57 2022 +0700
+
+    delete old search, pagination; create new class pagination, class for get parameter
+
+[33mcommit a64f4afbd434a5f05694c91bae012a8be0773a24[m
+Author: hieulatrung2911 <hieu.latrung2911@gmail.com>
+Date:   Sun Aug 28 14:48:50 2022 +0700
+
+    Delete old search, pagination; create new class PageList<>; create class Parameter to set param value in query
+
+[33mcommit 58986561c2b13dd74b3d5f31ca805906ae9dec73[m
+Author: hieulatrung2911 <hieu.latrung2911@gmail.com>
+Date:   Mon Aug 22 22:39:33 2022 +0700
+
+    22.8.2022 - 10:39pm
+
+[33mcommit 7ae0da3ccc67e891523f87128dde9eebf51e4103[m
+Author: hieulatrung2911 <hieu.latrung2911@gmail.com>
+Date:   Mon Aug 22 22:33:39 2022 +0700
+
+    22.8.2022 - 10:33pm
+
+[33mcommit 89c5b6c867e486bf9ff1f5fd40e598775962a640[m
+Author: hieulatrung2911 <hieu.latrung2911@gmail.com>
+Date:   Mon Aug 22 17:46:08 2022 +0700
+
+    update new project 22.8.2022
+
+[33mcommit b4a02ac47c7962f5f1bc1bfb102ade5c79318573[m
+Author: hieulatrung2911 <hieu.latrung2911@gmail.com>
+Date:   Mon Aug 22 17:43:51 2022 +0700
+
+    delete old project
+
+[33mcommit cbba1f349786bfb6862396e43f752b9b4982825a[m
+Author: hieulatrung2911 <hieu.latrung2911@gmail.com>
+Date:   Fri Aug 19 19:48:05 2022 +0700
+
+    19.8.2022-update model, add hotel controller
+
+[33mcommit 982481a37f42cc3e4d4e758b2dc854b0a845cf8c[m
+Author: hieulatrung2911 <hieu.latrung2911@gmail.com>
+Date:   Fri Aug 19 15:28:22 2022 +0700
+
+    19.8.2022
+
+[33mcommit d355ea2310e4c40d34cf01f85986ef4654711324[m
+Author: hieu291101 <56464164+hieu291101@users.noreply.github.com>
+Date:   Thu Aug 18 21:27:20 2022 +0700
+
+    Initial commit
