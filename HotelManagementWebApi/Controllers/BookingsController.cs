@@ -127,7 +127,7 @@ namespace HotelManagementWebApi.Controllers
                     res.Success = false;
                 }
                 
-            } catch (Exception e)
+            } catch (Exception)
             {
                 res.SetMessage("FAILED by foreign key");
                 res.Success = false;

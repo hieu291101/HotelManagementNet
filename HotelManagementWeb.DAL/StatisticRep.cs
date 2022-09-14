@@ -23,5 +23,19 @@ namespace HotelManagementWebApi.DAL
             sqldta.Fill(dt);
             return dt;
         }
+
+        public DataTable getDaTaForStatisticInPeriod(int hotelId, DateTime fromDate, DateTime toDate)
+        {
+            SqlConnection sql = new SqlConnection("Data Source=NEWBIE\\MYSQLS;Initial Catalog=Hotel;Integrated Security=True;MultipleActiveResultSets=True;TrustServerCertificate=True");
+            DataTable dt = new DataTable();
+            SqlCommand sqlcmd = new SqlCommand("spHotelStatisticInPeriodOfTime", sql);
+            sqlcmd.CommandType = CommandType.StoredProcedure;
+            sqlcmd.Parameters.Add(new SqlParameter("@hotelID", hotelId));
+            sqlcmd.Parameters.Add(new SqlParameter("@fromdate", fromDate));
+            sqlcmd.Parameters.Add(new SqlParameter("@todate", toDate));
+            SqlDataAdapter sqldta = new SqlDataAdapter(sqlcmd);
+            sqldta.Fill(dt);
+            return dt;
+        }
     }
 }
