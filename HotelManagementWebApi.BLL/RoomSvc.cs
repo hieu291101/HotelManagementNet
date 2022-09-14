@@ -26,10 +26,11 @@ namespace HotelManagementWebApi.BLL
             return _rep.GetRoomDeactive(roomID);
         }
 
+
         public SingleRsp CreateRoom(RoomReq roomReq)
         {
             var res = new SingleRsp();
-    
+
             var room = new Rooms()
             {
                 RoomNumber = roomReq.RoomNumber,
@@ -37,10 +38,18 @@ namespace HotelManagementWebApi.BLL
                 HotelId = roomReq.HotelId,
                 CreatedDateTime = DateTime.Now
             };
-
             res = _rep.CreateRoom(room);
             return res;
         }
+
+        public int UpdateRoomDeactive(int roomID)
+        {
+            return _rep.GetRoomDeactive(roomID);
+        }
+
+
+
+       
 
         public SingleRsp UpdateRoom(RoomReq roomReq)
         {

@@ -25,7 +25,6 @@ namespace HotelManagementWebApi.DAL.Models
         public DateTime? CreatedDateTime { get; set; }
 
         public virtual Employees Employees { get; set; }
-        public virtual HotelChain HotelChain { get; set; }
         public virtual ICollection<Guests> Guests { get; set; }
         public virtual ICollection<Hotels> Hotels { get; set; }
     }

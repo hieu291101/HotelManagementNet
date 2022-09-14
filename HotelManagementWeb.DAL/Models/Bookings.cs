@@ -9,22 +9,6 @@ namespace HotelManagementWebApi.DAL.Models
 {
     public partial class Bookings
     {
-        public Bookings()
-        {
-            RoomBooked = new HashSet<RoomBooked>();
-        }
-
-        public Bookings(DateTime? bookingDate, string durationStay, string bookingPaymentType, int? totalRoomsBooked, int? hotelId, decimal? totalAmount, int? roomId)
-        {
-            BookingDate = bookingDate;
-            DurationStay = durationStay ?? throw new ArgumentNullException(nameof(durationStay));
-            BookingPaymentType = bookingPaymentType ?? throw new ArgumentNullException(nameof(bookingPaymentType));
-            TotalRoomsBooked = totalRoomsBooked;
-            HotelId = hotelId;
-            TotalAmount = totalAmount;
-            RoomId = roomId;
-        }
-
         public int BookingId { get; set; }
         public DateTime? BookingDate { get; set; }
         public string DurationStay { get; set; }
@@ -37,12 +21,13 @@ namespace HotelManagementWebApi.DAL.Models
         public int? EmployeeId { get; set; }
         public decimal? TotalAmount { get; set; }
         public DateTime? CreatedDateTime { get; set; }
-        public int? RoomId { get; set; }
+        public int RoomId { get; set; }
+        public int? IsDeleted { get; set; }
+        public int? IsProcessed { get; set; }
 
         public virtual Employees Employee { get; set; }
         public virtual Guests Guest { get; set; }
         public virtual Hotels Hotel { get; set; }
         public virtual Rooms Room { get; set; }
-        public virtual ICollection<RoomBooked> RoomBooked { get; set; }
     }
 }

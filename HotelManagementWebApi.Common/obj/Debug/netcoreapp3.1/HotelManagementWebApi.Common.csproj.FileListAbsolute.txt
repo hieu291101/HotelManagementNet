@@ -49,3 +49,4 @@ E:\LTCSDL\BaiTap\HotelManagementNet_0509\HotelManagementNet\HotelManagementWebAp
 E:\LTCSDL\BaiTap\HotelManagementNet_0509\HotelManagementNet\HotelManagementWebApi.Common\obj\Debug\netcoreapp3.1\HotelManagementWebApi.Common.dll
 E:\LTCSDL\BaiTap\HotelManagementNet_0509\HotelManagementNet\HotelManagementWebApi.Common\obj\Debug\netcoreapp3.1\HotelManagementWebApi.Common.pdb
 E:\LTCSDL\BaiTap\HotelManagementNet_0509\HotelManagementNet\HotelManagementWebApi.Common\obj\Debug\netcoreapp3.1\HotelManagementWebApi.Common.genruntimeconfig.cache
+E:\LTCSDL\BaiTap\HotelManagementNet_0509\HotelManagementNet\HotelManagementWebApi.Common\obj\Debug\netcoreapp3.1\HotelManagementWebApi.Common.csproj.AssemblyReference.cache

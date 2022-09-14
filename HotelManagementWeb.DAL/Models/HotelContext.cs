@@ -24,10 +24,7 @@ namespace HotelManagementWebApi.DAL.Models
         public virtual DbSet<Departments> Departments { get; set; }
         public virtual DbSet<Employees> Employees { get; set; }
         public virtual DbSet<Guests> Guests { get; set; }
-        public virtual DbSet<HotelChain> HotelChain { get; set; }
-        public virtual DbSet<HotelChainHasHotel> HotelChainHasHotel { get; set; }
         public virtual DbSet<Hotels> Hotels { get; set; }
-        public virtual DbSet<RoomBooked> RoomBooked { get; set; }
         public virtual DbSet<RoomType> RoomType { get; set; }
         public virtual DbSet<Rooms> Rooms { get; set; }
 
@@ -99,12 +96,12 @@ namespace HotelManagementWebApi.DAL.Models
                 entity.HasOne(d => d.Employee)
                     .WithMany(p => p.Bookings)
                     .HasForeignKey(d => d.EmployeeId)
-                    .HasConstraintName("FK__Bookings__Employ__20C1E124");
+                    .HasConstraintName("FK__Bookings__Employ__6FE99F9F");
 
                 entity.HasOne(d => d.Guest)
                     .WithMany(p => p.Bookings)
                     .HasForeignKey(d => d.GuestId)
-                    .HasConstraintName("FK__Bookings__GuestI__21B6055D");
+                    .HasConstraintName("FK__Bookings__GuestI__6EF57B66");
 
                 entity.HasOne(d => d.Hotel)
                     .WithMany(p => p.Bookings)
@@ -168,12 +165,12 @@ namespace HotelManagementWebApi.DAL.Models
                 entity.HasOne(d => d.Address)
                     .WithOne(p => p.Employees)
                     .HasForeignKey<Employees>(d => d.AddressId)
-                    .HasConstraintName("FK__Employees__Addre__24927208");
+                    .HasConstraintName("FK__Employees__Addre__6C190EBB");
 
                 entity.HasOne(d => d.Department)
                     .WithMany(p => p.Employees)
                     .HasForeignKey(d => d.DepartmentId)
-                    .HasConstraintName("FK__Employees__Depar__25869641");
+                    .HasConstraintName("FK__Employees__Depar__628FA481");
 
                 entity.HasOne(d => d.Hotel)
                     .WithMany(p => p.Employees)
@@ -210,63 +207,7 @@ namespace HotelManagementWebApi.DAL.Models
                 entity.HasOne(d => d.Address)
                     .WithMany(p => p.Guests)
                     .HasForeignKey(d => d.AddressId)
-                    .HasConstraintName("FK__Guests__AddressI__276EDEB3");
-            });
-
-            modelBuilder.Entity<HotelChain>(entity =>
-            {
-                entity.HasIndex(e => e.HotelChainHeadOfficeAddressId)
-                    .HasName("UQ_HotelChain_Address")
-                    .IsUnique();
-
-                entity.Property(e => e.HotelChainId).HasColumnName("HotelChainID");
-
-                entity.Property(e => e.CreatedDateTime)
-                    .HasColumnType("datetime")
-                    .HasDefaultValueSql("(getutcdate())");
-
-                entity.Property(e => e.HotelChainContactNumber).HasMaxLength(12);
-
-                entity.Property(e => e.HotelChainEmailAddress).HasMaxLength(50);
-
-                entity.Property(e => e.HotelChainHeadOfficeAddressId).HasColumnName("HotelChainHeadOfficeAddressID");
-
-                entity.Property(e => e.HotelChainName).HasMaxLength(50);
-
-                entity.Property(e => e.HotelChainWebsite).HasMaxLength(50);
-
-                entity.HasOne(d => d.HotelChainHeadOfficeAddress)
-                    .WithOne(p => p.HotelChain)
-                    .HasForeignKey<HotelChain>(d => d.HotelChainHeadOfficeAddressId)
-                    .HasConstraintName("FK__HotelChai__Hotel__286302EC");
-            });
-
-            modelBuilder.Entity<HotelChainHasHotel>(entity =>
-            {
-                entity.HasNoKey();
-
-                entity.Property(e => e.CreatedDateTime)
-                    .HasColumnType("datetime")
-                    .HasDefaultValueSql("(getutcdate())");
-
-                entity.Property(e => e.HotelChainHasHotelId)
-                    .HasColumnName("HotelChainHasHotelID")
-                    .ValueGeneratedOnAdd();
-
-                entity.Property(e => e.HotelChainId).HasColumnName("HotelChainID");
-
-                entity.Property(e => e.HotelId).HasColumnName("HotelID");
-
-                entity.HasOne(d => d.HotelChainHasHotelNavigation)
-                    .WithMany()
-                    .HasForeignKey(d => d.HotelChainHasHotelId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__HotelChai__Hotel__2A4B4B5E");
-
-                entity.HasOne(d => d.Hotel)
-                    .WithMany()
-                    .HasForeignKey(d => d.HotelId)
-                    .HasConstraintName("FK__HotelChai__Hotel__59063A47");
+                    .HasConstraintName("FK__Guests__AddressI__1AD3FDA4");
             });
 
             modelBuilder.Entity<Hotels>(entity =>
@@ -304,33 +245,6 @@ namespace HotelManagementWebApi.DAL.Models
                     .WithMany(p => p.Hotels)
                     .HasForeignKey(d => d.AddressId)
                     .HasConstraintName("FK__Hotels__AddressI__02FC7413");
-            });
-
-            modelBuilder.Entity<RoomBooked>(entity =>
-            {
-                entity.HasIndex(e => e.RoomId)
-                    .HasName("UNQ_RoomBooked_Room")
-                    .IsUnique();
-
-                entity.Property(e => e.RoomBookedId).HasColumnName("RoomBookedID");
-
-                entity.Property(e => e.BookingId).HasColumnName("BookingID");
-
-                entity.Property(e => e.CreatedDateTime)
-                    .HasColumnType("datetime")
-                    .HasDefaultValueSql("(getutcdate())");
-
-                entity.Property(e => e.RoomId).HasColumnName("RoomID");
-
-                entity.HasOne(d => d.Booking)
-                    .WithMany(p => p.RoomBooked)
-                    .HasForeignKey(d => d.BookingId)
-                    .HasConstraintName("FK__RoomBooke__Booki__2C3393D0");
-
-                entity.HasOne(d => d.Room)
-                    .WithOne(p => p.RoomBooked)
-                    .HasForeignKey<RoomBooked>(d => d.RoomId)
-                    .HasConstraintName("FK__RoomBooke__RoomI__71D1E811");
             });
 
             modelBuilder.Entity<RoomType>(entity =>

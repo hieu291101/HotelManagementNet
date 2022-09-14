@@ -10,7 +10,7 @@ namespace HotelManagementWebApi.Common.Param
         public int bpRoomID { get; set; }
         public int bpHotelID { get; set; }
         public DateTime bpCheckInDate { get; set; } = DateTime.MinValue;
-        public DateTime bpCheckOutDate { get; set; } = DateTime.MinValue;
+        public DateTime bpCheckOutDate { get; set; }
         public int bpEmployeeID { get; set; }
 
     }

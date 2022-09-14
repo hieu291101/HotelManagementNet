@@ -20,9 +20,9 @@ namespace HotelManagementWebApi.DAL.Models
         public int HotelId { get; set; }
         public DateTime? CreatedDateTime { get; set; }
         public int Active { get; set; }
+
         public virtual Hotels Hotel { get; set; }
         public virtual RoomType RoomType { get; set; }
-        public virtual RoomBooked RoomBooked { get; set; }
         public virtual ICollection<Bookings> Bookings { get; set; }
     }
 }
