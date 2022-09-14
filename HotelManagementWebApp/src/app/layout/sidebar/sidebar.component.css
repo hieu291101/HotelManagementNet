@@ -1,0 +1,10 @@
+.sidebar-container {
+    width: 400px;
+    height: 100%;
+    margin: 10px;
+    border: 1px solid #555;
+  }
+
+.sidebar {
+    height:100%;
+}

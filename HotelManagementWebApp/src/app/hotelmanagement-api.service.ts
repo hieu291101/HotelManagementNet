@@ -26,4 +26,9 @@ export class HotelmanagementApiService {
   deleteHotel(id:number|string) {
     return this.http.delete(this.baseUrlApi + `/Hotels/${id}`);
   }
+
+  // login
+  login(data:any) {
+    return this.http.post(this.baseUrlApi + '/Guests/guestLogin', data);
+  }
  }

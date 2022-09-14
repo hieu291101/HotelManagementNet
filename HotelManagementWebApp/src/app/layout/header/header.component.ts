@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { LogindialogComponent } from '../logindialog/logindialog.component';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dialog : MatDialog) { }
 
   ngOnInit(): void {
   }
 
+  openLoginDialog() {
+    this.dialog.open(LogindialogComponent, {
+      width:'30%'
+    });
+  }
 }

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BookingDetailComponent } from './booking-detail.component';
+import { LogindialogComponent } from './logindialog.component';
 
-describe('BookingDetailComponent', () => {
-  let component: BookingDetailComponent;
-  let fixture: ComponentFixture<BookingDetailComponent>;
+describe('LogindialogComponent', () => {
+  let component: LogindialogComponent;
+  let fixture: ComponentFixture<LogindialogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BookingDetailComponent ]
+      declarations: [ LogindialogComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(BookingDetailComponent);
+    fixture = TestBed.createComponent(LogindialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
