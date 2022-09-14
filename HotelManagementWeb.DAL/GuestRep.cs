@@ -3,6 +3,7 @@ using HotelManagementWebApi.Common.DAL;
 using HotelManagementWebApi.Common.Param;
 using HotelManagementWebApi.Common.Rsp;
 using HotelManagementWebApi.DAL.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,69 @@ namespace HotelManagementWebApi.DAL
 {
     public class GuestRep : GenericRep<HotelContext, Guests>
     {
+        public Guests ReadModel(int id)
+        {
+            var res = Context.Guests.Include(a => a.Address).FirstOrDefault(htl => htl.GuestId == id);
+            return res;
+        }
+        public SingleRsp CreateGuest(Guests guest)
+        {
+            var res = new SingleRsp();
+
+            using (var tran = Context.Database.BeginTransaction())
+            {
+                try
+                {
+                    Create(guest);
+                    tran.Commit();
+                }
+                catch (Exception e)
+                {
+                    tran.Rollback();
+                    res.SetError(e.StackTrace);
+                }
+            }
+            return res;
+        }
+        public SingleRsp UpdateGuest(Guests guest)
+        {
+            var res = new SingleRsp();
+
+            using (var tran = Context.Database.BeginTransaction())
+            {
+                try
+                {
+                    Update(guest);
+                    tran.Commit();
+                }
+                catch (Exception e)
+                {
+                    tran.Rollback();
+                    res.SetError(e.StackTrace);
+                }
+            }
+            return res;
+        }
+
+        public SingleRsp DeleteGuest(Guests guest)
+        {
+            var res = new SingleRsp();
+
+            using (var tran = Context.Database.BeginTransaction())
+            {
+                try
+                {
+                    Delete(guest);
+                    tran.Commit();
+                }
+                catch (Exception e)
+                {
+                    tran.Rollback();
+                    res.SetError(e.StackTrace);
+                }
+            }
+            return res;
+        }
         #region -- Overide --
         public override Guests Read(int id)
         {
@@ -29,15 +93,25 @@ namespace HotelManagementWebApi.DAL
 
         public SingleRsp ReadGuestLogin(string guestEmail, string numberPhone)
         {
-            
+            var res = new SingleRsp();
             var data = from g in Context.Guests
                        where g.GuestContactNumber == numberPhone && g.GuestEmail == guestEmail
                        select new { g.GuestFirstName
                        , g.GuestLastName
                        , g.GuestContactNumber
                        };
-            var res = new SingleRsp();
-            res.Data = data;
+            if (data.Any())
+            {
+                res.Data = data;
+                res.SetMessage("Success");
+                res.Success = true;
+            }
+            else
+            {
+                res.SetMessage("Failed");
+                res.Success = false;
+            }
+            
             return res;
         }
 

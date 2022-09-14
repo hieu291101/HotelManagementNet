@@ -18,7 +18,7 @@ namespace HotelManagementWebApi.Controllers
         {
             statisticSvc = new StatisticSvc();
         }
-        [HttpPost("bookingRoomByEmployee")]
+        [HttpPost("statisticByYear")]
         public  IActionResult getHotelStatisticByYear(int hotelId, int year)
         {
  
@@ -30,6 +30,37 @@ namespace HotelManagementWebApi.Controllers
                 {
                     res = statisticSvc.getDaTaForStatistic(hotelId, year);
                         
+                }
+                else
+                {
+                    res.SetMessage("Invalid input value");
+                    res.Success = false;
+                }
+
+            }
+            catch (Exception)
+            {
+                res.SetMessage("FAILED by foreign key");
+                res.Success = false;
+            }
+
+            if (res == null)
+                NotFound();
+            return Ok(res);
+        }
+
+        [HttpPost("statisticInPeriod")]
+        public IActionResult getHotelStatisticInPeriod(int hotelId, DateTime fromDate, DateTime toDate)
+        {
+
+            var res = new SingleRsp();
+
+            try
+            {
+                if (hotelId != 0 && (fromDate.Year > 1900 && fromDate.Year < 2100) && (fromDate < toDate))
+                {
+                    res = statisticSvc.getDaTaForStatisticInPeriod(hotelId, fromDate, toDate);
+
                 }
                 else
                 {

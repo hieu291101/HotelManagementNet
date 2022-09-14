@@ -114,7 +114,7 @@ namespace HotelManagementWebApi.DAL
             return res;
         }
 
-        public SingleRsp DeleteHotel(Rooms room)
+        public SingleRsp DeleteRoom(Rooms room)
         {
             var res = new SingleRsp();
 

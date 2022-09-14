@@ -1,5 +1,6 @@
 ﻿using HotelManagementWebApi.BLL;
 using HotelManagementWebApi.Common.Param;
+using HotelManagementWebApi.Common.Req;
 using HotelManagementWebApi.Common.Rsp;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -63,7 +64,7 @@ namespace HotelManagementWebApi.Controllers
             return Ok(res);
         }
 
-        [HttpGet("guestLogin")]
+        [HttpPost("guestLogin")]
         public IActionResult GetGuestLogin(string guestEmail, string numberPhone)
         {
 
@@ -101,5 +102,76 @@ namespace HotelManagementWebApi.Controllers
 
         //    return Ok(rooms);
         //}
+
+        [HttpPost]
+        public IActionResult CreateGuest([FromBody] GuestReq guestReq)
+        {
+            var res = new SingleRsp();
+            res = guestSvc.CreateGuest(guestReq);
+            if (res == null)
+            {
+                return NotFound();
+            }
+            return Ok(res);
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult UpdateGuest(int id, [FromBody] GuestReq guestReq)
+        {
+            var res = new SingleRsp();
+
+            try
+            {
+                if (id != guestReq.GuestId)
+                    return BadRequest("Guest ID mismatch");
+
+                var guest = guestSvc.ReadModel(id).Data;
+
+                if (guest == null)
+                {
+                    return NotFound($"Guest with ID = {id} not found");
+                }
+
+                res = guestSvc.UpdateGuest(guestReq);
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error updating data");
+            }
+
+            if (res == null)
+            {
+                return NotFound();
+            }
+            return Ok(res);
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteGuest(int id)
+        {
+            var res = new SingleRsp();
+
+            try
+            {
+                var guest = guestSvc.Read(id).Data;
+
+                if (guest == null)
+                {
+                    return NotFound($"Guest with ID = {id} not found");
+                }
+
+                res = guestSvc.DeleteGuest(id);
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error updating data");
+            }
+
+            if (res == null)
+            {
+                return NotFound();
+            }
+            return Ok(res);
+        }
     }
 }

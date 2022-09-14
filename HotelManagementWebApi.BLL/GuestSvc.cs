@@ -1,5 +1,6 @@
 ﻿using HotelManagementWebApi.Common.BLL;
 using HotelManagementWebApi.Common.Param;
+using HotelManagementWebApi.Common.Req;
 using HotelManagementWebApi.Common.Rsp;
 using HotelManagementWebApi.DAL;
 using HotelManagementWebApi.DAL.Models;
@@ -12,6 +13,14 @@ namespace HotelManagementWebApi.BLL
 {
     public class GuestSvc : GenericSvc<GuestRep, Guests>
     {
+        public SingleRsp ReadModel(int id)
+        {
+            var res = new SingleRsp();
+            var data = _rep.ReadModel(id);
+            res.Data = data;
+            Console.WriteLine("checking data " + res.Data);
+            return res;
+        }
         // Tim thong tin phong khach hang theo so dien thoai
         public SingleRsp getGuestByNumberPhone(string numberPhone)
         {
@@ -50,6 +59,90 @@ namespace HotelManagementWebApi.BLL
         //    return res;
         //}
 
+        public SingleRsp CreateGuest(GuestReq guestReq)
+        {
+            var res = new SingleRsp();
+
+            var guest = new Guests()
+            {
+                GuestFirstName = guestReq.GuestFirstName,
+                GuestLastName = guestReq.GuestLastName,
+                GuestContactNumber = guestReq.GuestContactNumber,
+                GuestEmail = guestReq.GuestEmail,
+                GuestCreditCard = guestReq.GuestCreditCard,
+                GuestIdproof = guestReq.GuestIdproof,
+                CreatedDateTime = DateTime.Now
+            };
+
+            var address = new Addresses();
+            if (!guestReq.AddressLine1.Equals("") && !guestReq.AddressLine2.Equals("")
+                && !guestReq.City.Equals("") && !guestReq.State.Equals("")
+                && !guestReq.Country.Equals("") && !guestReq.ZipCode.Equals(""))
+            {
+                address.AddressLine1 = guestReq.AddressLine1;
+                address.AddressLine2 = guestReq.AddressLine2;
+                address.City = guestReq.City;
+                address.State = guestReq.State;
+                address.Country = guestReq.Country;
+                address.ZipCode = guestReq.ZipCode;
+                address.CreatedDateTime = DateTime.Now;
+                guest.Address = address;
+            }
+            
+            
+            res = _rep.CreateGuest(guest);
+            return res;
+        }
+
+        //public int UpdateGuestDeactive(int guestID)
+        //{
+        //    return _rep.GetGuestDeactive(guestID);
+        //}
+
+
+        public SingleRsp UpdateGuest(GuestReq guestReq)
+        {
+            var res = new SingleRsp();
+
+            var guest = _rep.ReadModel(guestReq.GuestId);
+
+            if (guest != null)
+            {
+                guest.GuestFirstName = guestReq.GuestFirstName;
+                guest.GuestLastName = guestReq.GuestLastName;
+                guest.GuestContactNumber = guestReq.GuestContactNumber;
+                guest.GuestEmail = guestReq.GuestEmail;
+                guest.GuestCreditCard = guestReq.GuestCreditCard;
+                guest.GuestIdproof = guestReq.GuestIdproof;
+            }
+
+            var address = new Addresses();
+            if (!guestReq.AddressLine1.Equals("") && !guestReq.AddressLine2.Equals("")
+                && !guestReq.City.Equals("") && !guestReq.State.Equals("")
+                && !guestReq.Country.Equals("") && !guestReq.ZipCode.Equals(""))
+            {
+                address.AddressLine1 = guestReq.AddressLine1;
+                address.AddressLine2 = guestReq.AddressLine2;
+                address.City = guestReq.City;
+                address.State = guestReq.State;
+                address.Country = guestReq.Country;
+                address.ZipCode = guestReq.ZipCode;
+                guest.Address = address;
+            }
+
+            res = _rep.UpdateGuest(guest);
+            return res;
+        }
+
+        public SingleRsp DeleteGuest(int id)
+        {
+            var res = new SingleRsp();
+
+            var guest = Read(id).Data;
+
+            res = _rep.DeleteGuest(guest);
+            return res;
+        }
         #region -- Overide --
         public override bool Equals(object obj)
         {

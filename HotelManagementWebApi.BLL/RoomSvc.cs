@@ -73,7 +73,7 @@ namespace HotelManagementWebApi.BLL
 
             var hotel = Read(id).Data;
 
-            res = _rep.DeleteHotel(hotel);
+            res = _rep.DeleteRoom(hotel);
             return res;
         }
         #region -- Overide --

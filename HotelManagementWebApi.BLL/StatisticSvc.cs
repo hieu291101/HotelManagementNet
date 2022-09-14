@@ -44,7 +44,7 @@ namespace HotelManagementWebApi.BLL
 
                 record.Add("hotelID", Convert.ToInt32(item["HotelID"]));
                 record.Add("hotelName", item["HotelName"].ToString());
-                record.Add("month", Convert.ToInt32(item["month"]));
+                record.Add("month",item["month"] + "/" + item["year"]);
                 record.Add("totalAmount", Convert.ToDecimal(item["totalAmount"]));
 
                 objects.Add(record);
