@@ -31,8 +31,7 @@ namespace HotelManagementWebApi.DAL
         public SingleRsp GetAllHotels(QueryStringParameters hotelParameters)
         {
             var res = new SingleRsp();
-            var data =
-                PagedList<Hotels>.ToPagedList(All, hotelParameters.PageNumber, hotelParameters.PageSize);
+            var data = PagedList<Hotels>.ToPagedList(All, hotelParameters.PageNumber, hotelParameters.PageSize);
 
             var metadata = new
             {

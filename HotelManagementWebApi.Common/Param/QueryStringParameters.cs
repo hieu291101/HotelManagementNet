@@ -19,7 +19,7 @@ namespace HotelManagementWebApi.Common.Param
 
             set
             {
-                _pageSize = (value > maxPageSize) ? maxPageSize: 0;
+                _pageSize = (value > maxPageSize) ? maxPageSize: value;
             }
         }
     }
