@@ -1,5 +1,6 @@
 ﻿using HotelManagementWebApi.BLL;
 using HotelManagementWebApi.Common.Param;
+using HotelManagementWebApi.Common.Req;
 using HotelManagementWebApi.Common.Rsp;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -78,5 +79,76 @@ namespace HotelManagementWebApi.Controllers
 
         //    return Ok(rooms);
         //}
+
+        [HttpPost]
+        public IActionResult CreateHotel([FromBody] RoomReq roomReq)
+        {
+            var res = new SingleRsp();
+            res = roomSvc.CreateRoom(roomReq);
+            if (res == null)
+            {
+                return NotFound();
+            }
+            return Ok(res);
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult UpdateRoom(int id, [FromBody] RoomReq roomReq)
+        {
+            var res = new SingleRsp();
+
+            try
+            {
+                if (id != roomReq.RoomId)
+                    return BadRequest("Room ID mismatch");
+
+                var room = roomSvc.Read(id).Data;
+
+                if (room == null)
+                {
+                    return NotFound($"Room with ID = {id} not found");
+                }
+
+                res = roomSvc.UpdateRoom(roomReq);
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error updating data");
+            }
+
+            if (res == null)
+            {
+                return NotFound();
+            }
+            return Ok(res);
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteRoom(int id)
+        {
+            var res = new SingleRsp();
+
+            try
+            {
+                var room = roomSvc.Read(id).Data;
+
+                if (room == null)
+                {
+                    return NotFound($"Room with ID = {id} not found");
+                }
+
+                res = roomSvc.DeleteRoom(id);
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error updating data");
+            }
+
+            if (res == null)
+            {
+                return NotFound();
+            }
+            return Ok(res);
+        }
     }
 }

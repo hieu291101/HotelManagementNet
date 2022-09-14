@@ -14,7 +14,14 @@ namespace HotelManagementWebApi.BLL
 {
     public class HotelSvc : GenericSvc<HotelRep, Hotels>
     {
-
+        public SingleRsp ReadModel(int id)
+        {
+            var res = new SingleRsp();
+            var data = _rep.ReadModel(id);
+            res.Data = data;
+            Console.WriteLine("checking data " + res.Data);
+            return res;
+        }
         public SingleRsp GetAllHotels(QueryStringParameters hotelParameters)
         {
             return _rep.GetAllHotels(hotelParameters);
@@ -24,6 +31,7 @@ namespace HotelManagementWebApi.BLL
             return _rep.GetHotelsByCondition(hotelParameters);
         }
 
+    
         public SingleRsp CreateHotel(HotelReq hotelReq)
         {
             var res = new SingleRsp();
@@ -60,33 +68,52 @@ namespace HotelManagementWebApi.BLL
         public SingleRsp UpdateHotel(HotelReq hotelReq)
         {
             var res = new SingleRsp();
-            var address = new Addresses()
+            
+            var hotel = ReadModel(hotelReq.HotelId).Data;
+            var address = new Addresses();
+            if (hotel != null)
             {
-                AddressLine1 = hotelReq.AddressLine1,
-                AddressLine2 = hotelReq.AddressLine2,
-                City = hotelReq.City,
-                State = hotelReq.State,
-                Country = hotelReq.Country,
-                ZipCode = hotelReq.ZipCode
-            };
-            var hotel = new Hotels()
-            {
-                HotelId = hotelReq.HotelId,
-                HotelName = hotelReq.HotelName,
-                HotelContactNumber = hotelReq.HotelContactNumber,
-                HotelEmailAddress = hotelReq.HotelEmailAddress,
-                HotelWebsite = hotelReq.HotelWebsite,
-                HotelDescription = hotelReq.HotelDescription,
-                HotelFloorCount = hotelReq.HotelFloorCount,
-                HotelRoomCapacity = hotelReq.HotelRoomCapacity,
-                HotelChainId = hotelReq.HotelChainId,
-                Address = address,
-                StarRatingId = hotelReq.StarRatingId,
-                CheckInTime = hotelReq.CheckInTime,
-                CheckOutTime = hotelReq.CheckOutTime
-            };
+                if(hotel.Address != null)
+                {
+                    address = new Addresses()
+                    {
+                        AddressId = hotel.AddressId,
+                        AddressLine1 = hotelReq.AddressLine1,
+                        AddressLine2 = hotelReq.AddressLine2,
+                        City = hotelReq.City,
+                        State = hotelReq.State,
+                        Country = hotelReq.Country,
+                        ZipCode = hotelReq.ZipCode
+                    };   
+                }
+                hotel.HotelId = hotelReq.HotelId;
+                hotel.HotelName = hotelReq.HotelName;
+                hotel.HotelContactNumber = hotelReq.HotelContactNumber;
+                hotel.HotelEmailAddress = hotelReq.HotelEmailAddress;
+                hotel.HotelWebsite = hotelReq.HotelWebsite;
+                hotel.HotelDescription = hotelReq.HotelDescription;
+                hotel.HotelFloorCount = hotelReq.HotelFloorCount;
+                hotel.HotelRoomCapacity = hotelReq.HotelRoomCapacity;
+                hotel.HotelChainId = hotelReq.HotelChainId;
+                hotel.Address = address;
+                hotel.StarRatingId = hotelReq.StarRatingId;
+                hotel.CheckInTime = hotelReq.CheckInTime;
+                hotel.CheckOutTime = hotelReq.CheckOutTime;
+            }
+
+            
 
             res = _rep.UpdateHotel(hotel);
+            return res;
+        }
+
+        public SingleRsp DeleteHotel(int id)
+        {
+            var res = new SingleRsp();
+
+            var hotel = ReadModel(id).Data;
+            
+            res = _rep.DeleteHotel(hotel);
             return res;
         }
         #region -- Overrides --
@@ -125,7 +152,7 @@ namespace HotelManagementWebApi.BLL
             var res = new SingleRsp();
             var data = _rep.Read(id);
             res.Data = data;
-
+            Console.WriteLine("checking data "+res.Data);
             return res;
         }
 

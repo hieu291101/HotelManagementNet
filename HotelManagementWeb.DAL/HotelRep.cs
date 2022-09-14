@@ -9,6 +9,7 @@ using System.Linq.Expressions;
 using HotelManagementWebApi.Common.Req;
 using HotelManagementWebApi.Common.Param;
 using HotelManagementWebApi.Common;
+using Microsoft.EntityFrameworkCore;
 
 namespace HotelManagementWebApi.DAL
 {
@@ -21,6 +22,12 @@ namespace HotelManagementWebApi.DAL
             return res;
         }
         #endregion
+
+        public Hotels ReadModel(int id)
+        {
+            var res = Context.Hotels.Include(a => a.Address).FirstOrDefault(htl => htl.HotelId == id);
+            return res;
+        }
         public SingleRsp GetAllHotels(QueryStringParameters hotelParameters)
         {
             var res = new SingleRsp();
@@ -107,5 +114,24 @@ namespace HotelManagementWebApi.DAL
             return res;
         }
 
+        public SingleRsp DeleteHotel(Hotels hotel)
+        {
+            var res = new SingleRsp();
+            
+            using (var tran = Context.Database.BeginTransaction())
+            {
+                try
+                {
+                    Delete(hotel);
+                    tran.Commit();
+                }
+                catch (Exception e)
+                {
+                    tran.Rollback();
+                    res.SetError(e.StackTrace);
+                }
+            }
+            return res;
+        }
     }
 }

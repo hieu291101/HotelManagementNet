@@ -44,7 +44,7 @@ namespace HotelManagementWebApi.Common.Rsp
         /// <summary>
         /// Data
         /// </summary>
-        public object Data { get; set; }
+        public dynamic Data { get; set; }
 
         /// <summary>
         /// Data

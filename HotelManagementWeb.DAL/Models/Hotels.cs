@@ -15,7 +15,7 @@ namespace HotelManagementWebApi.DAL.Models
             Employees = new HashSet<Employees>();
             Rooms = new HashSet<Rooms>();
         }
-
+     
         public int HotelId { get; set; }
         public string HotelName { get; set; }
         public string HotelContactNumber { get; set; }

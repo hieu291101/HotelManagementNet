@@ -86,10 +86,7 @@ namespace HotelManagementWebApi.DAL
         public SingleRsp CreateBookingEmployee(Bookings booking)
         {
             var res = new SingleRsp();
-            
-            
-
-
+           
             return res;
         }
     }
