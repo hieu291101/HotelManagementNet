@@ -13,14 +13,14 @@ using System.Security.Cryptography;
 
 namespace HotelManagementWebApi.DAL
 {
-    public class GuestRep : GenericRep<HotelContext, Guests>
+    public class EmployeeRep : GenericRep<HotelContext, Employees>
     {
-        public Guests ReadModel(int id)
+        public Employees ReadModel(int id)
         {
-            var res = Context.Guests.Include(a => a.Address).FirstOrDefault(htl => htl.GuestId == id);
+            var res = Context.Employees.Include(a => a.Address).FirstOrDefault(htl => htl.EmployeeId == id);
             return res;
         }
-        public SingleRsp CreateGuest(Guests guest)
+        public SingleRsp CreateEmployee(Employees employee)
         {
             var res = new SingleRsp();
 
@@ -28,7 +28,7 @@ namespace HotelManagementWebApi.DAL
             {
                 try
                 {
-                    Create(guest);
+                    Create(employee);
                     tran.Commit();
                 }
                 catch (Exception e)
@@ -51,22 +51,22 @@ namespace HotelManagementWebApi.DAL
             return hashSb.ToString();
         }
 
-        public SingleRsp ReadGuestLogin(GuestParameters guestParameter)
+        public SingleRsp ReadEmployeeLogin(EmployeeParameters employeeParameter)
         {
             var res = new SingleRsp();
-            string guestEmail = guestParameter.GuestEmail.ToString();
+            string employeeEmail = employeeParameter.EmployeeEmail.ToString();
 
-            var data_Email = from g in Context.Guests
-                             where g.GuestEmail == guestEmail
-                             select g.GuestEmail;
+            var data_Email = from e in Context.Employees
+                             where e.EmployeeEmail == employeeEmail
+                             select e.EmployeeEmail;
             var data_Password = data_Email;
 
             if (data_Email.Any())
             {
-                string guestEncryptPassword = SHA1(guestParameter.GuestPassword.ToString());
-                data_Password = from g in Context.Guests
-                                where g.EncryptPassword == guestEncryptPassword
-                                select g.EncryptPassword;
+                string employeeEncryptPassword = SHA1(employeeParameter.EmployeePassword.ToString());
+                data_Password = from e in Context.Employees
+                                where e.EncryptPassword == employeeEncryptPassword
+                                select e.EncryptPassword;
                 if (data_Password.Any())
                 {
                     res.SetMessage("Login successfully");
@@ -86,7 +86,7 @@ namespace HotelManagementWebApi.DAL
 
             return res;
         }
-        public SingleRsp UpdateGuest(Guests guest)
+        public SingleRsp UpdateEmployee(Employees employee)
         {
             var res = new SingleRsp();
 
@@ -94,7 +94,7 @@ namespace HotelManagementWebApi.DAL
             {
                 try
                 {
-                    Update(guest);
+                    Update(employee);
                     tran.Commit();
                 }
                 catch (Exception e)
@@ -106,7 +106,7 @@ namespace HotelManagementWebApi.DAL
             return res;
         }
 
-        public SingleRsp DeleteGuest(Guests guest)
+        public SingleRsp DeleteEmployee(Employees employee)
         {
             var res = new SingleRsp();
 
@@ -114,7 +114,7 @@ namespace HotelManagementWebApi.DAL
             {
                 try
                 {
-                    Delete(guest);
+                    Delete(employee);
                     tran.Commit();
                 }
                 catch (Exception e)
@@ -126,78 +126,58 @@ namespace HotelManagementWebApi.DAL
             return res;
         }
         #region -- Overide --
-        public override Guests Read(int id)
+        public override Employees Read(int id)
         {
-            return All.FirstOrDefault(g => g.GuestId == id);
+            return All.FirstOrDefault(e => e.EmployeeId == id);
         }
 
-        public SingleRsp ReadGuestByPhoneNumber(string numberPhone)
+        public SingleRsp ReadEmployeeByPhoneNumber(string numberPhone)
         {
             var res = new SingleRsp();
-            var data = All.FirstOrDefault(g => g.GuestContactNumber.CompareTo(numberPhone) == 0);
+            var data = All.FirstOrDefault(e => e.EmployeeContactNumber.CompareTo(numberPhone) == 0);
             res.Data = data;
             return res;
         }
-   
+
 
         public SingleRsp ReadRoomByPhoneNumber(string numberPhone)
         {
-            var data = from g in Context.Guests
-                       join b in Context.Bookings on g.GuestId equals b.GuestId
+            var data = from e in Context.Employees
+                       join b in Context.Bookings on e.EmployeeId equals b.EmployeeId
                        join h in Context.Hotels on b.HotelId equals h.HotelId
                        join r in Context.Rooms on b.RoomId equals r.RoomId
                        join rt in Context.RoomType on r.RoomTypeId equals rt.RoomTypeId
-                       where g.GuestContactNumber == numberPhone
-                       select new { b.GuestId
-                       , b.RoomId
-                       , r.RoomNumber
-                       , rt.RoomTypeName 
-                       , b.HotelId
-                       , h.HotelName
-                       , b.BookingDate
-                       , b.CheckInDate
-                       , b.CheckOutDate 
-                       , r.Active };
+                       where e.EmployeeContactNumber == numberPhone
+                       select new
+                       {
+                           b.EmployeeId
+                       ,
+                           b.RoomId
+                       ,
+                           r.RoomNumber
+                       ,
+                           rt.RoomTypeName
+                       ,
+                           b.HotelId
+                       ,
+                           h.HotelName
+                       ,
+                           b.BookingDate
+                       ,
+                           b.CheckInDate
+                       ,
+                           b.CheckOutDate
+                       ,
+                           r.Active
+                       };
 
             var res = new SingleRsp();
             res.Data = data.SingleOrDefault();
             return res;
         }
 
-        //public SingleRsp RegisterRoomByPhoneNumber(string guestEmail, string numberPhone)
-        //{
-
-        //    Context.Bookings.Add(new Bookings { });
-        //    Context.SaveChanges();
-            
-        //    var res = new SingleRsp();
-        //    //res.Data = data;
-        //    return res;
-        //}
-
-        //public Dictionary<string, dynamic> ReadGuestByPhoneNumber(string numberPhone)   // dynamic là kiểu động (flexible)
-        //{
-
-        //Guests guest = All.FirstOrDefault(g => g.guests.GuestContactNumber.CompareTo(numberPhone) == 0).guests;
-        //Bookings bookingInfo = null;
-        //Rooms roomNumberBooking = null;
-        //Hotels hotelBooking = null;
-
-        //if (guest != null)
-        //{
-        //    bookingInfo = All.FirstOrDefault(b => b.bookings.GuestId == guest.GuestId).bookings;
-        //    roomNumberBooking = All.FirstOrDefault(r => r.rooms.RoomId == bookingInfo.RoomID).rooms;
-        //    hotelBooking = All.FirstOrDefault(h => h.hotels.HotelId == bookingInfo.HotelId).hotels;
-        //}
-
-        //return new Dictionary<string, dynamic>()
-        //{
-        //{ "guests" , guest },
-        //{ "bookings" , bookingInfo },
-        //{ "rooms" , roomNumberBooking },
-        //{ "hotels" , hotelBooking }
-        //};
 
         #endregion
     }
 }
+

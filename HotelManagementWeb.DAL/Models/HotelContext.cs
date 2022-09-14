@@ -32,9 +32,7 @@ namespace HotelManagementWebApi.DAL.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source=NEWBIE\\MYSQLS;Initial Catalog=Hotel;Integrated Security=True;MultipleActiveResultSets=True;TrustServerCertificate=True");
-                optionsBuilder.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
-
+              optionsBuilder.UseSqlServer("Data Source=HUYNHTANTU\\SQLSERVER;Initial Catalog=Hotel;Integrated Security=True;MultipleActiveResultSets=True;TrustServerCertificate=True");
             }
         }
 
@@ -160,6 +158,8 @@ namespace HotelManagementWebApi.DAL.Models
 
                 entity.Property(e => e.EmployeeLastName).HasMaxLength(50);
 
+                entity.Property(e => e.EncryptPassword).HasMaxLength(500);
+
                 entity.Property(e => e.HotelId).HasColumnName("HotelID");
 
                 entity.HasOne(d => d.Address)
@@ -189,6 +189,8 @@ namespace HotelManagementWebApi.DAL.Models
                 entity.Property(e => e.CreatedDateTime)
                     .HasColumnType("datetime")
                     .HasDefaultValueSql("(getutcdate())");
+
+                entity.Property(e => e.EncryptPassword).HasMaxLength(500);
 
                 entity.Property(e => e.GuestContactNumber).HasMaxLength(12);
 

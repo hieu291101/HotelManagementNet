@@ -19,4 +19,8 @@
     <ProjectReference Include="..\HotelManagementWebApi.Common\HotelManagementWebApi.Common.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
 </Project>

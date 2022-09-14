@@ -14,40 +14,29 @@ namespace HotelManagementWebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class GuestsController : ControllerBase
+    public class EmployeesController : ControllerBase
     {
-        private GuestSvc guestSvc;
-        public GuestsController()
+        private EmployeeSvc employeeSvc;
+        public EmployeesController()
         {
-            guestSvc = new GuestSvc();
+            employeeSvc = new EmployeeSvc();
         }
-
-        //[HttpGet]
-        //public IActionResult GetGuests([FromQuery] QueryStringParameters guestParameter)
-        //{
-        //    var res = new SingleRsp();
-        //    res = guestSvc.getAllRooms(guestParameter);
-        //    if (res == null)
-        //        NotFound();
-        //    return Ok(res);
-        //}
-
         [HttpGet("{id}")]
-        public IActionResult GetGuest(int id)
+        public IActionResult GetEmployee(int id)
         {
             var res = new SingleRsp();
-            res = guestSvc.Read(id);
+            res = employeeSvc.Read(id);
             if (res == null)
                 NotFound();
             return Ok(res);
         }
 
-        [HttpGet("guestByNumberPhone")]
-        public IActionResult GetGuestByNumberPhone(string numberPhone)
+        [HttpGet("employeeByNumberPhone")]
+        public IActionResult GetEmployeeByNumberPhone(string numberPhone)
         {
 
             var res = new SingleRsp();
-            res = guestSvc.getGuestByNumberPhone(numberPhone);
+            res = employeeSvc.getEmployeeByNumberPhone(numberPhone);
             if (res == null)
                 NotFound();
             return Ok(res);
@@ -58,29 +47,29 @@ namespace HotelManagementWebApi.Controllers
         {
 
             var res = new SingleRsp();
-            res = guestSvc.getRoomByNumberPhone(numberPhone);
+            res = employeeSvc.getRoomByNumberPhone(numberPhone);
             if (res == null)
                 NotFound();
             return Ok(res);
         }
 
-        [HttpPost("guestLogin")]
-        public IActionResult GetGuestLogin([FromBody]GuestParameters guestParameter)
+        [HttpPost("employeeLogin")]
+        public IActionResult GetGuestLogin(EmployeeParameters employeeParameters)
         {
 
             var res = new SingleRsp();
-            res = guestSvc.getGuestLogin(guestParameter);
+            res = employeeSvc.getEmployeeLogin(employeeParameters);
             if (res == null)
                 NotFound();
             return Ok(res);
         }
 
-        
-        [HttpPost("createGuest")]
-        public IActionResult CreateGuest([FromBody] GuestReq guestReq)
+
+        [HttpPost("createEmployee")]
+        public IActionResult CreateEmployee([FromBody] EmployeeReq employeeReq)
         {
             var res = new SingleRsp();
-            res = guestSvc.CreateGuest(guestReq);
+            res = employeeSvc.CreateEmployee(employeeReq);
             if (res == null)
             {
                 return NotFound();
@@ -89,23 +78,23 @@ namespace HotelManagementWebApi.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult UpdateGuest(int id, [FromBody] GuestReq guestReq)
+        public IActionResult UpdateEmployee(int id, [FromBody] EmployeeReq employeeReq)
         {
             var res = new SingleRsp();
 
             try
             {
-                if (id != guestReq.GuestId)
-                    return BadRequest("Guest ID mismatch");
+                if (id != employeeReq.EmployeeId)
+                    return BadRequest("Employee ID mismatch");
 
-                var guest = guestSvc.ReadModel(id).Data;
+                var employee = employeeSvc.ReadModel(id).Data;
 
-                if (guest == null)
+                if (employee == null)
                 {
-                    return NotFound($"Guest with ID = {id} not found");
+                    return NotFound($"Employee with ID = {id} not found");
                 }
 
-                res = guestSvc.UpdateGuest(guestReq);
+                res = employeeSvc.UpdateEmployee(employeeReq);
             }
             catch (Exception)
             {
@@ -120,20 +109,20 @@ namespace HotelManagementWebApi.Controllers
         }
 
         [HttpDelete("{id}")]
-        public IActionResult DeleteGuest(int id)
+        public IActionResult DeleteEmployee(int id)
         {
             var res = new SingleRsp();
 
             try
             {
-                var guest = guestSvc.Read(id).Data;
+                var employee = employeeSvc.Read(id).Data;
 
-                if (guest == null)
+                if (employee == null)
                 {
-                    return NotFound($"Guest with ID = {id} not found");
+                    return NotFound($"Employee with ID = {id} not found");
                 }
 
-                res = guestSvc.DeleteGuest(id);
+                res = employeeSvc.DeleteEmployee(id);
             }
             catch (Exception)
             {
@@ -146,5 +135,7 @@ namespace HotelManagementWebApi.Controllers
             }
             return Ok(res);
         }
+
+
     }
 }

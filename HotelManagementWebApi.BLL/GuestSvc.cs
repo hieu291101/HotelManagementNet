@@ -7,6 +7,7 @@ using HotelManagementWebApi.DAL.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace HotelManagementWebApi.BLL
@@ -18,7 +19,6 @@ namespace HotelManagementWebApi.BLL
             var res = new SingleRsp();
             var data = _rep.ReadModel(id);
             res.Data = data;
-            Console.WriteLine("checking data " + res.Data);
             return res;
         }
         // Tim thong tin phong khach hang theo so dien thoai
@@ -42,12 +42,12 @@ namespace HotelManagementWebApi.BLL
             return _rep.ReadRoomByPhoneNumber(numberPhone);  // tao bien data va gan numberphone doc duoc
         }
 
-        public SingleRsp getGuestLogin(string guestEmail, string numberPhone)
+        public SingleRsp getGuestLogin(GuestParameters guestParameter)
         {
-        
 
-            return  _rep.ReadGuestLogin(guestEmail, numberPhone);  // tao bien data va gan numberphone doc duoc
+            return _rep.ReadGuestLogin(guestParameter);  // tao bien data va gan numberphone doc duoc
         }
+
 
         // Khach hang book phong
         //public SingleRsp postGuestBookingRoom(string guestEmail, string numberPhone)
@@ -58,7 +58,17 @@ namespace HotelManagementWebApi.BLL
 
         //    return res;
         //}
-
+        public static string SHA1(string text)
+        {
+            SHA1Managed sha1 = new SHA1Managed();
+            byte[] hash = sha1.ComputeHash(Encoding.UTF8.GetBytes(text));
+            StringBuilder hashSb = new StringBuilder();
+            foreach (byte b in hash)
+            {
+                hashSb.Append(b.ToString("x2"));
+            }
+            return hashSb.ToString();
+        }
         public SingleRsp CreateGuest(GuestReq guestReq)
         {
             var res = new SingleRsp();
@@ -71,7 +81,8 @@ namespace HotelManagementWebApi.BLL
                 GuestEmail = guestReq.GuestEmail,
                 GuestCreditCard = guestReq.GuestCreditCard,
                 GuestIdproof = guestReq.GuestIdproof,
-                CreatedDateTime = DateTime.Now
+                CreatedDateTime = DateTime.Now,
+                EncryptPassword = SHA1(guestReq.GuestContactNumber)
             };
 
             var address = new Addresses();

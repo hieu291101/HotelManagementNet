@@ -22,13 +22,8 @@ namespace HotelManagementWebApi.DAL.Models
         public string GuestCreditCard { get; set; }
         public string GuestIdproof { get; set; }
         public int? AddressId { get; set; }
-        public string AddressLine1 { get; set; }
-        public string AddressLine2 { get; set; }
-        public string City { get; set; }
-        public string State { get; set; }
-        public string Country { get; set; }
-        public string ZipCode { get; set; }
         public DateTime? CreatedDateTime { get; set; }
+        public string EncryptPassword { get; set; }
 
         public virtual Addresses Address { get; set; }
         public virtual ICollection<Bookings> Bookings { get; set; }

@@ -25,6 +25,7 @@ namespace HotelManagementWebApi.DAL.Models
         public int? AddressId { get; set; }
         public int? HotelId { get; set; }
         public DateTime? CreatedDateTime { get; set; }
+        public string EncryptPassword { get; set; }
 
         public virtual Addresses Address { get; set; }
         public virtual Departments Department { get; set; }
