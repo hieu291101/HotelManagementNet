@@ -113,6 +113,25 @@ namespace HotelManagementWebApi.DAL
             }
             return res;
         }
-    
+
+        public SingleRsp DeleteHotel(Hotels hotel)
+        {
+            var res = new SingleRsp();
+            
+            using (var tran = Context.Database.BeginTransaction())
+            {
+                try
+                {
+                    Delete(hotel);
+                    tran.Commit();
+                }
+                catch (Exception e)
+                {
+                    tran.Rollback();
+                    res.SetError(e.StackTrace);
+                }
+            }
+            return res;
+        }
     }
 }

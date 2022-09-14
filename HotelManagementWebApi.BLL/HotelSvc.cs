@@ -65,48 +65,55 @@ namespace HotelManagementWebApi.BLL
             return res;
         }
 
-        public SingleRsp UpdateHotel(HotelReq hotelReq, object ob)
+        public SingleRsp UpdateHotel(HotelReq hotelReq)
         {
             var res = new SingleRsp();
-            int addressId = 0;
-            Hotels hotelModel;
-            hotelModel = (ob as Hotels);
             
-            if (hotelModel.AddressId != null)
-                addressId = (int)hotelModel.AddressId;
-
-            var address = new Addresses()
+            var hotel = ReadModel(hotelReq.HotelId).Data;
+            var address = new Addresses();
+            if (hotel != null)
             {
-                AddressId = addressId,
-                AddressLine1 = hotelReq.AddressLine1,
-                AddressLine2 = hotelReq.AddressLine2,
-                City = hotelReq.City,
-                State = hotelReq.State,
-                Country = hotelReq.Country,
-                ZipCode = hotelReq.ZipCode,
-                CreatedDateTime = hotelModel.Address.CreatedDateTime
-            };
+                if(hotel.Address != null)
+                {
+                    address = new Addresses()
+                    {
+                        AddressId = hotel.AddressId,
+                        AddressLine1 = hotelReq.AddressLine1,
+                        AddressLine2 = hotelReq.AddressLine2,
+                        City = hotelReq.City,
+                        State = hotelReq.State,
+                        Country = hotelReq.Country,
+                        ZipCode = hotelReq.ZipCode
+                    };   
+                }
+                hotel.HotelId = hotelReq.HotelId;
+                hotel.HotelName = hotelReq.HotelName;
+                hotel.HotelContactNumber = hotelReq.HotelContactNumber;
+                hotel.HotelEmailAddress = hotelReq.HotelEmailAddress;
+                hotel.HotelWebsite = hotelReq.HotelWebsite;
+                hotel.HotelDescription = hotelReq.HotelDescription;
+                hotel.HotelFloorCount = hotelReq.HotelFloorCount;
+                hotel.HotelRoomCapacity = hotelReq.HotelRoomCapacity;
+                hotel.HotelChainId = hotelReq.HotelChainId;
+                hotel.Address = address;
+                hotel.StarRatingId = hotelReq.StarRatingId;
+                hotel.CheckInTime = hotelReq.CheckInTime;
+                hotel.CheckOutTime = hotelReq.CheckOutTime;
+            }
 
-            var hotel = new Hotels()
-            {
-                HotelId = hotelReq.HotelId,
-                HotelName = hotelReq.HotelName,
-                HotelContactNumber = hotelReq.HotelContactNumber,
-                HotelEmailAddress = hotelReq.HotelEmailAddress,
-                HotelWebsite = hotelReq.HotelWebsite,
-                HotelDescription = hotelReq.HotelDescription,
-                HotelFloorCount = hotelReq.HotelFloorCount,
-                HotelRoomCapacity = hotelReq.HotelRoomCapacity,
-                HotelChainId = hotelReq.HotelChainId,
-                Address = address,
-                AddressId = addressId,
-                StarRatingId = hotelReq.StarRatingId,
-                CheckInTime = hotelReq.CheckInTime,
-                CheckOutTime = hotelReq.CheckOutTime,
-                CreatedDateTime = hotelModel.CreatedDateTime
-            };
+            
 
             res = _rep.UpdateHotel(hotel);
+            return res;
+        }
+
+        public SingleRsp DeleteHotel(int id)
+        {
+            var res = new SingleRsp();
+
+            var hotel = ReadModel(id).Data;
+            
+            res = _rep.DeleteHotel(hotel);
             return res;
         }
         #region -- Overrides --

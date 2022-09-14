@@ -8,6 +8,10 @@ import { HotelmanagementComponent } from './hotelmanagement/hotelmanagement.comp
 import { ShowHotelmanagementComponent } from './hotelmanagement/show-hotelmanagement/show-hotelmanagement.component';
 import { AddEditHotelmanagementComponent } from './hotelmanagement/add-edit-hotelmanagement/add-edit-hotelmanagement.component';
 import { HotelmanagementApiService } from './hotelmanagement-api.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { LayoutModule } from './layout/layout.module';
+import {MatSidenavModule} from '@angular/material/sidenav';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,9 +21,12 @@ import { HotelmanagementApiService } from './hotelmanagement-api.service';
   ],
   imports: [
     BrowserModule,
+    LayoutModule,
+    MatSidenavModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [HotelmanagementApiService],
   bootstrap: [AppComponent]

@@ -89,15 +89,52 @@ namespace HotelManagementWebApi.Controllers
         {
             var res = new SingleRsp();
 
-            var hotel = hotelSvc.ReadModel(id).Data;
-
-
-            if (hotel != null)
+            try
             {
-                hotelReq.HotelId = id;
-                res = hotelSvc.UpdateHotel(hotelReq, hotel);
+                if (id != hotelReq.HotelId)
+                    return BadRequest("Hotel ID mismatch");
+
+                var hotel = hotelSvc.ReadModel(id).Data;
+
+                if (hotel == null)
+                {
+                    return NotFound($"Hotel with ID = {id} not found");
+                }
+
+                res = hotelSvc.UpdateHotel(hotelReq);
+            }
+            catch(Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error updating data");
             }
                 
+            if (res == null)
+            {
+                return NotFound();
+            }
+            return Ok(res);
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteHotel(int id)
+        {
+            var res = new SingleRsp();
+
+            try
+            {
+                var hotel = hotelSvc.ReadModel(id).Data;
+
+                if (hotel == null)
+                {
+                    return NotFound($"Hotel with ID = {id} not found");
+                }
+
+                res = hotelSvc.DeleteHotel(id);
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error updating data");
+            }
 
             if (res == null)
             {

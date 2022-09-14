@@ -92,6 +92,16 @@ namespace HotelManagementWebApi.Common.DAL
         }
 
         /// <summary>
+        /// Delete the model
+        /// </summary>
+        /// <param name="m">The model</param>
+        public void Delete(T m)
+        {
+            _context.Set<T>().Remove(m);
+            _context.SaveChanges();
+        }
+
+        /// <summary>
         /// Return query all data
         /// </summary>
         public IQueryable<T> All
@@ -131,7 +141,7 @@ namespace HotelManagementWebApi.Common.DAL
         /// </summary>
         /// <param name="m">The model</param>
         /// <returns>Return the object</returns>
-        protected T Delete(T m)
+        protected T DeleteM(T m)
         {
             var t = _context.Set<T>().Remove(m);
             return t.Entity;

@@ -1,5 +1,6 @@
 ﻿using HotelManagementWebApi.Common.BLL;
 using HotelManagementWebApi.Common.Param;
+using HotelManagementWebApi.Common.Req;
 using HotelManagementWebApi.Common.Rsp;
 using HotelManagementWebApi.DAL;
 using HotelManagementWebApi.DAL.Models;
@@ -25,7 +26,47 @@ namespace HotelManagementWebApi.BLL
             return _rep.GetRoomDeactive(roomID);
         }
 
+        public SingleRsp CreateRoom(RoomReq roomReq)
+        {
+            var res = new SingleRsp();
+    
+            var room = new Rooms()
+            {
+                RoomNumber = roomReq.RoomNumber,
+                RoomTypeId = roomReq.RoomTypeId,
+                HotelId = roomReq.HotelId,
+                CreatedDateTime = DateTime.Now
+            };
 
+            res = _rep.CreateRoom(room);
+            return res;
+        }
+
+        public SingleRsp UpdateRoom(RoomReq roomReq)
+        {
+            var res = new SingleRsp();
+
+            var room = Read(roomReq.RoomId).Data;
+            var address = new Addresses();
+            if (room != null)
+            {
+                room.RoomNumber = roomReq.RoomNumber;
+                room.RoomTypeId = roomReq.RoomTypeId;
+            }
+
+            res = _rep.UpdateRoom(room);
+            return res;
+        }
+
+        public SingleRsp DeleteRoom(int id)
+        {
+            var res = new SingleRsp();
+
+            var hotel = Read(id).Data;
+
+            res = _rep.DeleteHotel(hotel);
+            return res;
+        }
         #region -- Overide --
         public override bool Equals(object obj)
         {

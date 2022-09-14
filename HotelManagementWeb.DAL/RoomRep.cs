@@ -74,5 +74,63 @@ namespace HotelManagementWebApi.DAL
                    
             return data.SingleOrDefault();
         }
+        public SingleRsp CreateRoom(Rooms room)
+        {
+            var res = new SingleRsp();
+
+            using (var tran = Context.Database.BeginTransaction())
+            {
+                try
+                {
+                    Create(room);
+                    tran.Commit();
+                }
+                catch (Exception e)
+                {
+                    tran.Rollback();
+                    res.SetError(e.StackTrace);
+                }
+            }
+            return res;
+        }
+        public SingleRsp UpdateRoom(Rooms room)
+        {
+            var res = new SingleRsp();
+
+            using (var tran = Context.Database.BeginTransaction())
+            {
+                try
+                {
+                    Update(room);
+                    tran.Commit();
+                }
+                catch (Exception e)
+                {
+                    tran.Rollback();
+                    res.SetError(e.StackTrace);
+                }
+            }
+            return res;
+        }
+
+        public SingleRsp DeleteHotel(Rooms room)
+        {
+            var res = new SingleRsp();
+
+            using (var tran = Context.Database.BeginTransaction())
+            {
+                try
+                {
+                    Delete(room);
+                    tran.Commit();
+                }
+                catch (Exception e)
+                {
+                    tran.Rollback();
+                    res.SetError(e.StackTrace);
+                }
+            }
+            return res;
+        }
     }
 }
