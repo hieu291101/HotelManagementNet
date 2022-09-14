@@ -23,7 +23,6 @@ namespace HotelManagementWebApi.DAL.Models
 
         public virtual Hotels Hotel { get; set; }
         public virtual RoomType RoomType { get; set; }
-        public virtual RoomBooked RoomBooked { get; set; }
         public virtual ICollection<Bookings> Bookings { get; set; }
     }
 }

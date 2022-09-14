@@ -9,9 +9,7 @@
     <ng-template pTemplate="body" let-row let-columns="columns">
         <tr>
             <ng-container *ngFor="let col of columns">
-                <td *ngIf="col.field !== 'actions'">
-                    {{row[col.field]}}
-                </td>
+                <td *ngIf="col.field !== 'actions'"> {{row[col.field]}} </td>
                 <td *ngIf="col.field === 'actions'">
                     <i *ngIf="row[col.field] === 'edit'" class="pi-user-edit"></i>
                 </td>
@@ -20,7 +18,8 @@
     </ng-template>
 </p-table>
 
-<div class="mb-3">
-    <p-button type="button" icon="pi pi-chevron-left" (click)="prev()" styleClass="p-button-text"></p-button>
-    <p-button type="button" icon="pi pi-chevron-right" (click)="next()" styleClass="p-button-text"></p-button>
+<div class="mb-1">
+    <p-button type="button" icon="pi pi-chevron-left" (click)="prev()" styleClass="p-button-text">&#60;</p-button>
+    <p-button type="button" icon="pi pi-chevron-right" (click)="next()" styleClass="p-button-text">&#62;</p-button>
+    <p-button type="button" class="pi-plus"></p-button>
 </div>
